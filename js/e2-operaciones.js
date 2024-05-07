@@ -1,4 +1,26 @@
 //EJEMPLOS DE OPERACIONES//SUMAN DOS NUMEROS
+document.write("<h2><u>EJERCICIO 3: OPERACIONES</u></h2>");
+//Indice página
+document.write("<h4 id = \"indice\">INDICE</h4>");
+document.write("<h5><b>Ejemplos</b></h5>");
+document.write("<ol><li><a href = \"#ejemplos\">Sumar / Restar / Multiplicar / Dividir</a></li></ol>");
+document.write("<h5><b>Ejercicios</b></h5>");
+document.write("<ol start='0'>");
+document.write("<li><a href='#ejercicio0'>Crear variables frutas y hacer operaciones</a></li>");
+document.write("<li><a href='#ejercicio1'>Crea variables para guardar las notas de un alumno</a></li>");
+document.write("<li><a href='#ejercicio2'>Calcula el área de un cuadrado</a></li>");
+document.write("<li><a href='#ejercicio3'>Encuentra el área de un rectángulo</a></li>");
+document.write("<li><a href='#ejercicio4'>Determina el área de un triángulo</a></li>");
+document.write("<li><a href='#ejercicio5'>Calcula el área de un círculo</a></li>");
+document.write("<li><a href='#ejercicio6'>Encuentra el área de un trapecio</a></li>");
+document.write("<li><a href='#ejercicio7'>Determina el área de un rombo</a></li>");
+document.write("<li><a href='#ejercicio8'>Calcula el área de un paralelogramo</a></li>");
+document.write("<li><a href='#ejercicio9'>Encuentra el área de un pentágono regularmo</a></li>");
+document.write("</ol>");
+
+document.write("<hr>");
+
+document.write("<h4 id = \"ejemplos\">EJEMPLOS: Sumar/Restar/Multiplicar/Dividir</h4>");
 //Sumar el precio de tomates y manzanas
 let precioTomates = 2.8;
 let precioManzanas = 1.5;
@@ -67,4 +89,5 @@ document.write("El numero de intentos incrementado es " + numeroIntentos);
 document.write("<br/>");
 numeroIntentos--;
 document.write("El numero de intentos decrementado es " + numeroIntentos);
-document.write("<br/>");
+document.write("<br/><br/>");
+document.write("<hr>");

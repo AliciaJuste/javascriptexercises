@@ -1,4 +1,4 @@
-document.write("<h2><u>EJERCICIO 2: VARIABLES</u></h2>");
+document.write("<h2><u>EJERCICIO 1: VARIABLES</u></h2>");
 //Indice página
 document.write("<h4 id = \"indice\">INDICE</h4>");
 document.write("<h5><b>Ejemplos</b></h5>");
@@ -307,3 +307,36 @@ document.write("<p>· Clima predominante = " + climaDestino + "<br></p>");
 document.write("<p>· Población = " + poblacionDestino + "<br></p>");
 document.write("<p>· ¿Es un destino costero? = " + (esDestinoCostero ? "SI" : "NO") + "<br></p>");
 document.write("<p>· ¿Es un destino urbano? = " + (esDestinoUrbano ? "SI" : "NO") + "<br><br></p>");
+
+/*EJERCICIO 7: Declara las siguientes variables o constantes según corresponda:
+  · Número de meses del año
+  · Número de días de la semana.
+  · Número de habitantes en tu ciudad.
+  · Edad de tu cantante favorito.
+  · Número de estaciones del año.
+  · Nombre de tu ciudad.
+  · Número de horas en un día.
+  · Precio de la gasolina.
+  · Número de libros que has leído. */
+
+const NUM_MESES_ANY = 12;
+const NUM_DIAS_SEMANA = 7;
+num_habitantes_ciudad = 68854;
+edad_cantante_favorito = 70;
+const NUM_ESTACIONES_ANY = 4;
+nombre_ciudad = "Vilanova i la Geltrú";
+const NUM_HORAS_DIA = 24;
+precio_gasolina = 1.775;
+num_libros_leidos = 200;
+
+document.write("<h4 id = \"ejercicio7\">EJERCICIO 7: CONSTANTES <a href = \"#indice\" style=\"text-decoration: none;\">&#11014;</a></h4>");
+
+document.write("El año tiene " + NUM_MESES_ANY + " meses<br>");
+document.write("La semana tiene " + NUM_DIAS_SEMANA + " dias<br>");
+document.write("Vilanova tiene tiene " + num_habitantes_ciudad + " habitantes<br>");
+document.write("Cindy Lauper tiene " + edad_cantante_favorito + " años<br>");
+document.write("El año tiene " + NUM_ESTACIONES_ANY + " estaciones<br>");
+document.write("Mi ciudad es " + nombre_ciudad +"<br>");
+document.write("El dia tiene " + NUM_HORAS_DIA + " horas<br>");
+document.write("El precio de la gasolina es " + precio_gasolina + "€<br>");
+document.write("He leido unos " + num_libros_leidos + " libros<br>");
