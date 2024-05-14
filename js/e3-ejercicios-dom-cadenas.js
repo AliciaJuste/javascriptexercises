@@ -1,76 +1,190 @@
 //EJERCICIOS DE DOM Y CADENAS
+//1. Crea una variable con la frase Hola que tal, bienvenida a QA, y muestrala junto con:
+//· Su longitud
+//· La posición de la palabra QA
+//· La primera letra de la frase.
+//· La última letra de la frase.
+//· Muestra la frase completa en mayúscula
+//· Muestra la frase completa en minúscula
+//· Crea una variable con tu nombre, y modifica la frase para que diga Hola seguido de tu nombre
+//· Crea una nueva palabra, con la misma frase quitando la palabra que tal.
 
-//JAVASCRIPT DOM. OBTENER ELEMENTOS DE LA PAGINA POR SU ID
-//Obtener el elemento html con id ejemplo
-let parrafoEjemplo = document.getElementById("ejemplo");
-//Modificar el texto del elemento html con id ejemplo
-parrafoEjemplo.innerText = "Hola Bootcamp QA";
+//Crea una variable con la frase Hola que tal, bienvenida a QA
+let fraseBienvenida = "Hola que tal, bienvenida a QA";
 
-//Obtener el elemento html con id ejemploTitulo
-let tituloEjemplo = document.getElementById("ejemploTitulo");
-let miNombre = "Reyes";
-let miEdad = 33;
-tituloEjemplo.innerText = "Hola mi nombre es " + miNombre + " mi edad es " + miEdad;
+//· Su longitud
+let fraseBienvenidaLongitud = fraseBienvenida.length;
 
-//Obtener el elemento html con id ejemplo2 y agregar un texto con etiquetas html
-let ejemplo2 = document.getElementById("ejemplo2");
-ejemplo2.innerHTML = "<b>Ejemplo 2 en negrita</b>";
+//· La posición de la palabra QA
+let fraseBienvenidaPosicionQA = fraseBienvenida.indexOf("QA");
 
-//Crear un nuevo parrafo dentro del div con id contenido
-let divContenido = document.getElementById("contenido");
-let nuevoTitulo = document.createElement("h3");
-nuevoTitulo.innerText = "Ejemplo Crear Elementos desde Javascript";
-divContenido.appendChild(nuevoTitulo);
+//· La primera letra de la frase.
+let fraseBienvenidaPrimeraLetra = fraseBienvenida[0];
 
-let nuevoParrafo = document.createElement("p");
-nuevoParrafo.innerText = "Hola soy un nuevo parrafo creado";
-divContenido.appendChild(nuevoParrafo);
+//· La última letra de la frase.
+let fraseBienvenidaUltimaLetra = fraseBienvenida[fraseBienvenidaLongitud - 1];
 
+//· Muestra la frase completa en mayúscula
+let fraseBienvenidaMayusculas = fraseBienvenida.toUpperCase();
 
-//Obtener el atributo del elemento a con id ejemplo 3 y agregarle una url
-let ejemplo3 = document.getElementById("ejemplo3");
-let paginaWeb = "https://bootcampqa.com";
-ejemplo3.href = paginaWeb;
+//· Muestra la frase completa en minúscula
+let fraseBienvenidaMinusculas = fraseBienvenida.toLowerCase();
 
-//Obtener el elemento html con id ejemplo4 y cambiar su color a rojo
-let ejemplo4 = document.getElementById("ejemplo4");
-let newColor = "red";
-ejemplo4.style.color = newColor;
+//· Crea una variable con tu nombre, y modifica la frase para que diga Hola seguido de tu nombre
+let nombreEstudianteBienvenida = "Alice";
+let fraseBienvenidaNombre = fraseBienvenida.replace("Hola", "Hola " + nombreEstudianteBienvenida);
 
-//CADENAS EN JAVASCRIPT
-//Escapar caracteres especiales en una cadena se hace con \
-let cadenaEjemplo = "Hola mi nombre es \"Juan\" que tal estas";
-let ejemplo5 = document.getElementById("ejemplo5");
-ejemplo5.innerText = cadenaEjemplo;
+//· Crea una nueva palabra, con la misma frase quitando la palabra que tal.
+let fraseBienvenidaSinQueTal = fraseBienvenida.replace(" que tal","");
 
-//Contar caracteres de una cadena
-let ejemploContar = "Bienvenidos a Bootcamp QA";
-let totalLetrasCadenaEjemplo = ejemploContar.length;
+//Crear parrafos html para mostrar los resultados de cada operacion
+let parrafo = document.getElementById("e1longitud");
+parrafo.innerText = "La longitud de la frase " + fraseBienvenida + " es: " + fraseBienvenidaLongitud;
 
-let ejemplo6 = document.getElementById("ejemplo6");
-ejemplo6.innerText = "La cadena " + ejemploContar + " tiene un total de " + totalLetrasCadenaEjemplo + "caracteres";
+parrafo = document.getElementById("e1posicionQA");
+parrafo.innerText = "La longitud de la frase " + fraseBienvenida + " es: " + fraseBienvenidaPosicionQA;
 
-//Obtener la letra en la posicion que elijas de la cadena
-let primeraLetra = ejemploContar[0]; //la primera siempre empieza en 0
-let ultimaLetra = ejemploContar[ejemploContar.length - 1]; //El total de letras de la cadena, menos uno porque empieza en 0
-let ejemplo7 = document.getElementById("ejemplo7");
-ejemplo7.innerText = "La primera letra de la palabra " + ejemploContar + " es " + primeraLetra + " y la ultima letra es " + ultimaLetra;
+parrafo = document.getElementById("e1letraPrimera");
+parrafo.innerText = "La longitud de la frase " + fraseBienvenida + " es: " + fraseBienvenidaPrimeraLetra;
 
-//Cambiar la cadena todo a mayusculas o minusculas
-let cadenaMayusculas = ejemploContar.toUpperCase();
-let cadenaMinusculas = ejemploContar.toLowerCase();
+parrafo = document.getElementById("e1letraUltima");
+parrafo.innerText = "La longitud de la frase " + fraseBienvenida + " es: " + fraseBienvenidaUltimaLetra;
 
-let ejemplo8 = document.getElementById("ejemplo8");
-ejemplo8.innerText = "La cadena " + ejemploContar + " mayusculas " + cadenaMayusculas + " minusculas " + cadenaMinusculas;
+parrafo = document.getElementById("e1fraseMayuscula");
+parrafo.innerText = "La longitud de la frase " + fraseBienvenida + " es: " + fraseBienvenidaMayusculas;
 
-//sustituir texto de una cadena
-//Sustituir una palabra por otra
-let nuevaCadena = ejemploContar.replace("Bootcamp QA","Mi web");
-let ejemplo9 = document.getElementById("ejemplo9");
-ejemplo9.innerText = "Antes de reemplazar " + ejemploContar + " despues de reemplazar " + nuevaCadena;
-//Sustituir una palabra por una variable
-let mensajeBienvenida = "Bienvenido estudiante";
-let nombreEstudiante = "Juan";
-let nuevoMensajeBienvenida = mensajeBienvenida.replace("estudiante", nombreEstudiante);
-let ejemplo10 = document.getElementById("ejemplo10");
-ejemplo10.innerText = "Antes de reemplazar " + mensajeBienvenida + " despues de reemplazar " + nuevoMensajeBienvenida;
+parrafo = document.getElementById("e1fraseMinuscula");
+parrafo.innerText = "La longitud de la frase " + fraseBienvenida + " es: " + fraseBienvenidaMinusculas;
+
+parrafo = document.getElementById("e1fraseNombre");
+parrafo.innerText = "La longitud de la frase " + fraseBienvenida + " es: " + fraseBienvenidaNombre;
+
+parrafo = document.getElementById("e1fraseSinQueTal");
+parrafo.innerText = "OPCION1: La frase sin 'que tal' es: " + fraseBienvenidaSinQueTal;
+
+//OPCION 2 PARA IMPRIMIR EL HTML
+//IMPORTANTE, ESTE MODO VA A AGREGAR EL TEXTO SIEMPRE AL FINAL, EL ANTERIOR VA ESTARA DONDE TU ELIJAS
+let divEjercicio1 = document.getElementById("contenidoEjercicios1");
+let parrafoEjercicio1Cademas = document.createElement("p");
+parrafoEjercicio1Cademas.innerText = "OPCION2: La frase sin 'que tal' es: " + fraseBienvenidaSinQueTal;
+divEjercicio1.appendChild(parrafoEjercicio1Cademas);
+
+//-----------------------------------------------------------------------------------------------------
+
+//2.Crea una variable con una frase en la que te presentes y muestrala junto con:
+//· Su longitud
+//· La posición de tu nombre
+//· La primera letra de la frase.
+//· La última letra de la frase.
+//· Muestra la frase completa en mayúscula
+//· Muestra la frase completa en minúscula
+//· Muestra la frase cambiando tu nombre por otro que elijas.
+//· Crea una nueva palabra, con la misma frase quitando tu nombre.
+let frasePresentacion = "Mi nombre es Alicia y estoy aprendiendo Javascript";
+let frasePresentacionLongitud = frasePresentacion.length;
+let frasePresentacionPosicionNombre = frasePresentacion.indexOf("Alicia");
+let frasePresentacionPrimeraLetra = frasePresentacion[0];
+let frasePresentacionUltimaLetra = frasePresentacion[frasePresentacionLongitud - 1];
+let frasePresentacionMayusculas = frasePresentacion.toUpperCase();
+let frasePresentacionMinusculas = frasePresentacion.toLowerCase();
+let frasePresentacionNuevoNombre = frasePresentacion.replace("Alicia","Alice");
+let frasePresentacionSinNombre = frasePresentacion.replace("Alicia ","");
+
+//Imprimir todas las variables por pantalla
+let divEjercicio2 = document.getElementById("contenidoEjercicios2");
+
+//· Su longitud
+let parrafoEjercicio2Longitud = document.createElement("p");
+parrafoEjercicio2Longitud.innerText = "La longitud de la frase '" + frasePresentacion + "' es: " + frasePresentacionLongitud;
+divEjercicio2.appendChild(parrafoEjercicio2Longitud);
+
+//· La posición de tu nombre
+let parrafoEjercicio2Posicion = document.createElement("p");
+parrafoEjercicio2Posicion.innerText = "La posicion del nombre es: " + frasePresentacionPosicionNombre;
+divEjercicio2.appendChild(parrafoEjercicio2Posicion);
+
+//· La primera letra de la frase
+let parrafoEjercicio2PrimeraLetra = document.createElement("p");
+parrafoEjercicio2PrimeraLetra.innerText = "La primera letra de la frase es: " + frasePresentacionPrimeraLetra;
+divEjercicio2.appendChild(parrafoEjercicio2PrimeraLetra);
+
+//· La última letra de la frase
+let parrafoEjercicio2ULtimaLetra = document.createElement("p");
+parrafoEjercicio2ULtimaLetra.innerText = "La ultima letra de la frase es: " + frasePresentacionUltimaLetra;
+divEjercicio2.appendChild(parrafoEjercicio2ULtimaLetra);
+
+//· Muestra la frase completa en mayúscula
+let parrafoEjercicio2Mayusculas = document.createElement("p");
+parrafoEjercicio2Mayusculas.innerText = "La frase de presentación en mayúsculas es: " + frasePresentacionMayusculas;
+divEjercicio2.appendChild(parrafoEjercicio2Mayusculas);
+
+//· Muestra la frase completa en minúscula
+let parrafoEjercicio2Minusculas = document.createElement("p");
+parrafoEjercicio2Minusculas.innerText = "La frase de presentación en minúsculas es: " + frasePresentacionMinusculas;
+divEjercicio2.appendChild(parrafoEjercicio2Minusculas);
+
+//· Muestra la frase cambiando tu nombre por otro que elijas
+let parrafoEjercicio2NuevoNombre = document.createElement("p");
+parrafoEjercicio2NuevoNombre.innerText = "La frase cambiando el nombre es: " + frasePresentacionNuevoNombre;
+divEjercicio2.appendChild(parrafoEjercicio2NuevoNombre);
+
+//· Crea una nueva palabra, con la misma frase quitando tu nombre
+let parrafoEjercicio2SinNombre = document.createElement("p");
+parrafoEjercicio2SinNombre.innerText = "La frase quitando el nombre es: " + frasePresentacionSinNombre;
+divEjercicio2.appendChild(parrafoEjercicio2SinNombre);
+
+//-----------------------------------------------------------------------------------------------------
+
+let divEjercicio3_4_5 = document.getElementById("contenidoEjercicios3_4_5");
+
+//3. Crea una variable con tu nombre completo y muestralo por pantalla. 
+//A continuación, quita los espacios de la variable y muestralo por pantalla.
+let tituloEjercicio2NombreCompleto = document.createElement("h5");
+tituloEjercicio2NombreCompleto.textContent = "EJERCICIO 3: Crea una variable con tu nombre completo y muestralo por pantalla. A continuación, quita los espacios de la variable y muestralo por pantalla.";
+divEjercicio3_4_5.appendChild(tituloEjercicio2NombreCompleto);
+//-------
+let nombreCompletoCadenas = "Alicia Juste Gilabert";
+let parrafoEjercicio2NombreCompleto = document.createElement("p");
+parrafoEjercicio2NombreCompleto.textContent = "Mi nombre completo es: " + nombreCompletoCadenas;
+divEjercicio3_4_5.appendChild(parrafoEjercicio2NombreCompleto);
+
+let nombreCompletoSinEspacios = nombreCompletoCadenas.replaceAll(" ","");
+let parrafoEjercicio2NombreCompletoSinEspacios = document.createElement("p");
+parrafoEjercicio2NombreCompletoSinEspacios.textContent = "Mi nombre completo es: " + nombreCompletoSinEspacios;
+divEjercicio3_4_5.appendChild(parrafoEjercicio2NombreCompletoSinEspacios);
+
+//-----------------------------------------------------------------------------------------------------
+
+//4. Crea una variable con una palabra en minuscula y muestralo por pantalla. 
+//Cambia la primera letra a mayuscula y muestrala por pantalla.
+let tituloEjercicio2PalabraMinusculas = document.createElement("h5");
+tituloEjercicio2PalabraMinusculas.textContent = "EJERCICIO 4: Crea una variable con una palabra en minuscula y muestralo por pantalla. Cambia la primera letra a mayuscula y muestrala por pantalla.";
+divEjercicio3_4_5.appendChild(tituloEjercicio2PalabraMinusculas);
+//--------
+let palabraEnMinusculas = "supercalifragilisticoexpialidoso";
+let parrafoEjercicio2PalabraMinusculas = document.createElement("p");
+parrafoEjercicio2PalabraMinusculas.textContent = "La palabra en minúsculas es: " + palabraEnMinusculas;
+divEjercicio3_4_5.appendChild(parrafoEjercicio2PalabraMinusculas);
+
+let parrafoEjercicio2PalabraMinusculas2 = document.createElement("p");
+let palabraPrimeraEnMayusculas = palabraEnMinusculas.charAt(0).toUpperCase() + palabraEnMinusculas.slice(1);
+parrafoEjercicio2PalabraMinusculas2.textContent = "La palabra con la primera letra en mayúsculas es: " + palabraPrimeraEnMayusculas
+divEjercicio3_4_5.appendChild(parrafoEjercicio2PalabraMinusculas2);
+
+//-----------------------------------------------------------------------------------------------------
+
+//5. Crea una cadena con el texto Hola Mundo y muestralo por pantalla. 
+//Reemplaza la palabra Hola por Adios y muestralo por pantalla
+let tituloEjercicio2HolaMundo = document.createElement("h5");
+tituloEjercicio2HolaMundo.textContent = "EJERCICIO 5: Crea una cadena con el texto Hola Mundo y muestralo por pantalla. Reemplaza la palabra Hola por Adios y muestralo por pantalla";
+divEjercicio3_4_5.appendChild(tituloEjercicio2HolaMundo);
+//--------
+let textoHolaMundo = "Hola Mundo";
+let parrafoEjercicio2HolaMundo = document.createElement("p");
+parrafoEjercicio2HolaMundo.textContent = "El texto inicial es: " + textoHolaMundo;
+divEjercicio3_4_5.appendChild(parrafoEjercicio2HolaMundo);
+
+let textoAdiosMundo = textoHolaMundo.replace("Hola","Adios");
+let parrafoEjercicio2AdiosMundo = document.createElement("p");
+parrafoEjercicio2AdiosMundo.textContent = ("El texto final es: " + textoAdiosMundo);
+divEjercicio3_4_5.appendChild(parrafoEjercicio2AdiosMundo);
