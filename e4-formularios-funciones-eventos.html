@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript desde 0 con Ejercicios</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="p-5 bg-dark text-white text-center">
+        <h1>Bootcamp QA: Formularios, Funciones y Eventos</h1>
+        <p><a href="https://www.w3schools.com/html/html_form_input_types.asp">Formularios Input</a></p>
+        <p><a href="https://www.w3schools.com/bootstrap5/bootstrap_form_select.php">Formularios Select</a></p>
+        <p><a href="https://www.w3schools.com/bootstrap5/bootstrap_form_select.php">Formularios Select</a></p>
+        <p><a href="https://www.w3schools.com/bootstrap/bootstrap_buttons.asp">Formularios Botones</a></p>
+        <p><a href="https://developer.mozilla.org/es/docs/Learn/Forms/Form_validation">Formularios Validaciones</a></p>
+        <p><a href="https://www.w3schools.com/bootstrap5/bootstrap_form_validation.php">Formularios Validaciones
+                Boostrap</a></p>
+        <p><a href="https://developer.mozilla.org/es/docs/Glossary/Function">Funciones</a></p>
+    </div>
+    <br>
+    <div id="contenidoEjemplosFormularios" class="container mt-5">
+        <h2>EJEMPLOS FORMULARIOS</h2>
+        <p>Podeis elegir type EL TIPO, id y PLACEHOLDER: texto de informacion que aparece dentro del recuadro del input</p>
+        <br>
+        <h4>EJEMPLO 1: Input Tipo Texto</h4>
+        <input type="text" id="e1texto" placeholder="Introduce tu texto">
+        <br><br>
+        <h4>EJEMPLO 2: Input Tipo Password</h4>
+        <input type="password" id="e2password" placeholder="Introduce tu password">
+        <br><br>
+        <h4>EJEMPLO 3: Input Tipo Radio</h4>
+        <p>Permite elegir solo uno de los tres. Deben tener el mismo name y diferente id</p>
+        <input type="radio" id="colorRojo" name="color"> Rojo
+        <input type="radio" id="colorVerde" name="color"> Verde
+        <input type="radio" id="Amarillo" name="color"> Amarillo
+        <br><br>
+        <h4>EJEMPLO 4: Input Tipo Checkbox</h4>
+        <p>Permite elegir los que quieras. No necesitan name</p>
+        <input type="checkbox" id="acepto"> Acepto las condiciones
+        <input type="checkbox" id="aceptoCookies"> Acepto las cookies
+        <br><br>
+        <h4>EJEMPLO 5: Input Tipo Fecha y tipo fecha y hora</h4>
+        <input type="date" id="e5fecha">
+        <input type="datetime-local" id="e5fechayhora">
+        <br><br>
+        <h4>EJEMPLO 6: Input Tipo Email</h4>
+        <input type="email" id="e5email" placeholder="Introduce un email">
+        <br>
+        <h4>EJEMPLO 7: Input Tipo Numero</h4>
+        <input type="number" id="e7numero" placeholder="Agrega un numero">
+        <br><br>
+        <h4>EJEMPLO 8: Select</h4>
+        <p>Select sirve para seleccionar un valor entre varias opciones. Tiene id, que va en el select, class
+            form-select, para que tenga un estilo bonito con boostrap y options con value que es el valor de cada
+            elemento que se selecciona</p>
+        <select id="e8Color" class="form-select">
+            <option value="rojo">Rojo</option>
+            <option value="verde">Verde</option>
+            <option value="amarillo">Amarillo</option>
+            <option value=""></option>
+        </select>
+        <br><br>
+        <h4>EJEMPLO 8: Botones</h4>
+        <p>Botones, puedes elegir una class segun el color que quieras para el boton</p>
+        <button type="button" class="btn btn-default">Texto del Boton</button>
+        <button type="button" class="btn btn-primary">Ejemplo texto</button>
+        <button type="button" class="btn btn-success">Boton 2</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <br><br>
+        <h4>EJEMPLO 9: Validaciones de input texto y estilos</h4>
+        <p>Crear un div con la clase was-validated y poner dentro del div los elementos del formulario a validar</p>
+        <p>Por cada elemento a validar, hacer un div con la clase mb-3 y dentro poner el elemento a validar, y un texto
+            con la class valid-feedback y el texto de feedback valido, y otro texto con la class invalid-feedback y el
+            texto de feedback invalido</p>
+        <div id="ejemplo9formulario" class="was-validated">
+
+            <div class="mb-3">
+                <input type="text" id="e9texto" placeholder="Introduce tu texto" required minlength="5" maxlength="10"
+                    class="form-control">
+                <p class="valid-feedback">El texto introducido es correcto</p>
+                <p class="invalid-feedback">El campo texto es obligatorio y debe tener entre 5 y 10 caracteres</p>
+            </div>
+
+            <div class="mb-3">
+                <input type="number" id="e9number" placeholder="Introduce tu numero" required min="0" max="10"
+                    class="form-control">
+                <p class="valid-feedback">El numero es correcto</p>
+                <p class="invalid-feedback">El campo numero es obligatorio required, y debe tener un valor min de 0 y un
+                    max de 10</p>
+            </div>
+
+            <div class="mb-3">
+                <input type="email" id="e9email" placeholder="Introduce tu email" required minlength="5" maxlength="10"
+                    class="form-control">
+                <p class="valid-feedback">El email introducido es correcto</p>
+                <p class="invalid-feedback">El campo email es obligatorio y debe tener entre 5 y 10 caracteres</p>
+            </div>
+
+
+            <button type="button" class="btn btn-success">Guardar Texto</button>
+        </div>
+
+    </div>
+
+    <div id="contenidoFunciones" class="container mt-5">
+        <hr>
+        <h2>EJEMPLOS FUNCIONES</h1>
+        <h4>Ejemplo 1: Llamar a una funcion</h4>
+        <p id="funcionesEjemplo1"></p>
+        <h4>Ejemplo 2: Llamar a una funcion desde un boton</h4>
+        <button type="button" class="btn btn-success" onclick="saludar()">Saludar</button>
+        <p id="funcionesEjemplo2"></p>
+        <br><br>
+        <h4>Ejemplo 3: Obtener informacion de un formulario y usarlo en una funcion</h4>
+        <input type="number" id="e3numero1" placeholder="Agrega un numero">
+        <input type="number" id="e3numero2" placeholder="Agrega un numero a restar">
+        <button type="button" class="btn btn-success" onclick="restar()">Restar</button>
+        <p id="funcionesEjemplo3"></p>
+        <br><br>
+        <h4>Ejemplo 4: Obtener informacion de un select y usarlo en una funcion</h4>
+            <p>Elige una ciudad:</p>
+            <select id="e4ciudades" class="form-select">
+                <option value="Malaga">Ciudad Malaga</option>
+                <option value="Madrid">Ciudad Madrid</option>
+                <option value="Barcelona">Ciudad Barcelona</option>
+                <option value=""></option>
+            </select>
+        <button type="button" class="btn btn-success" onclick="mostrarUbicacion()">Mostrar ubicacion</button>
+        <p id="e4solucion"></p>
+
+    </div>
+    <hr>
+    <div id="contenidoEjercicios" class="container mt-5">
+        <h2>EJERCICIOS</h2>
+        <br>
+        <!-- EJERCICIO 1 ------------------------------------>
+        <div id="ejercicio1Formularios" class="was-validated">
+            <h4>EJERCICIO 1</h4>
+            <h6>Crea un formulario para introducir nombre, ciudad y fecha de nacimiento. 
+                - Agrega validación con Boostrap. Todos los campos son obligatorios. 
+                El nombre y la ciudad debe tener entre 3 y 30 caracteres. 
+                La fecha de nacimiento tiene que estar entre 1900 y 2024. 
+                - Agrega un boton que al hacer click llame a una función que muestre un mensaje de bienvenida con los datos introducidos.
+            </h6>
+            <div class="mb-3">
+                <input type="text" id="eje1Nombre" placeholder="Introduce tu nombre" required minlength="3" maxlength="30" class="form-control">
+                <p class="valid-feedback">El nombre introducido es correcto</p>
+                <p class="invalid-feedback">El nombre es obligatorio y debe tener entre 3 y 30 caracteres</p>
+            </div>
+            <div class="mb-3">
+                <input type="text" id="eje1Ciudad" placeholder="Introduce tu ciudad" required minlength="3" maxlength="30" class="form-control">
+                <p class="valid-feedback">La ciudad introducido es correcta</p>
+                <p class="invalid-feedback">La ciudad es obligatoria y debe tener entre 3 y 30 caracteres</p>            
+            </div>
+            <div class="mb-3">
+                <input type="number" id="eje1FechaNacimiento" required min="1900" max="2024" >
+                <p class="valid-feedback">La fecha introducido es correcta</p>
+                <p class="invalid-feedback">La fecha es obligatoria y debe estar entre los años 1900 y 2024</p>       
+            </div>
+            <button type="button" id="eje1Boton" class="btn btn-primary" onclick="mensajeBienvenida('eje1Nombre', 'eje1Ciudad', 'eje1FechaNacimiento')">Enviar datos</button>
+        </div>
+        <br><br>
+        <!-- EJERCICIO 2 ------------------------------------>
+        <div id="ejercicio2Formularios" class="was-validated">
+            <h4>EJERCICIO 2</h4>
+            <h6>Crea un formulario para introducir dos numeros. 
+                - Agrega validación con Boostrap. Todos los campos son obligatorios. Solo admite numeros de cualquier tipo.
+                - Agrega un boton que al hacer click llame a una función que muestre un mensaje con el resultado de la suma, 
+                  la resta, la multiplicación y la división de esos dos números.
+            </h6>
+            <div class="mb-3">
+                <input type="number" id="eje2Numero1" placeholder="Introduce un número" required>
+                <p class="valid-feedback">El número es correcto</p>
+                <p class="invalid-feedback">El número es obligatorio o no es correcto</p>
+
+                <input type="number" id="eje2Numero2" placeholder="Introduce otro número" required>
+                <p class="valid-feedback">El número es correcto</p>
+                <p class="invalid-feedback">El número es obligatorio</p>
+            </div>
+            <button type="button" id="eje2Boton" class="btn btn-success" onclick="hacerOperaciones('eje2Numero1', 'eje2Numero2')">Hacer operaciones</button>
+        </div>
+        <br><br>
+        <!-- EJERCICIO 3 ------------------------------------>
+        <div id="ejercicio3Formularios" class="was-validated">
+            <h4>EJERCICIO 3</h4>
+            <h6>Crea un formulario para convertir monedas. El usuario debe introducir una catidad en euros. 
+                - Agrega validación con boostrap, el campo es obligatorio, debe ser un número positivo. 
+                - Agrega un boton que al hacer click llame a una función que muestre un mensaje con la cantidad en dólares y en libras
+            </h6>
+            <div class="mb-3">
+                <input type="number" id="eje3ImporteEuros" placeholder="Introduce un importe en euros" required min="'0">
+                <p class="valid-feedback">El número es correcto</p>
+                <p class="invalid-feedback">El número tiene que ser positivo</p>
+            </div>
+            <button type="button" id="eje3Boton" class="btn btn-success" onclick="cambioEuros('eje3ImporteEuros')">Calcular cambio</button>
+            <p id="eje3FormulariosResultado"></p>
+        </div>        
+        <br><br>
+        <!-- EJERCICIO 4 ------------------------------------>
+        <div id="ejercicio4Formularios" class="was-validated">
+            <h4>EJERCICIO 4</h4>
+            <h6>Crea un formulario para calcular precio total de un producto. 
+                - El usuario debe introducir el nombre del producto, el precio y la cantidad. 
+                  Agrega validación Boostrap. Todos los campos son obligatorios. 
+                  El nombre debe tener entre 3 y 20 caracteres. 
+                  El precio no puede ser negativo. 
+                  La cantidad no puede ser negativa. 
+                - Agrega un boton que al hacer click llame a una función que muestre un mensaje con el nombre del producto, 
+                  su cantidad, su precio y el precio total.
+            </h6>
+            <div class="mb-3">
+                <input type="text" id="eje4NombreProducto" placeholder="Introduce el nombre del producto" required minlength="3" maxlength="20">
+                <p class="valid-feedback">El nombre es correcto</p>
+                <p class="invalid-feedback">El nombre debe tener entre 3 y 20 caracteres</p>
+            </div>
+            <div class="mb-3">
+                <input type="number" id="eje4PrecioProducto" placeholder="Introduce el precio del producto" required min="0">
+                <p class="valid-feedback">El precio es correcto</p>
+                <p class="invalid-feedback">El precio no puede ser negativo</p>
+            </div>
+            <div class="mb-3">
+                <input type="number" id="eje4CantidadProducto" placeholder="Introduce la cantidad del producto" required min="0">
+                <p class="valid-feedback">La cantidad es correcta</p>
+                <p class="invalid-feedback">La cantidad no puede ser negativa</p>
+            </div>
+            <button type="button" id="eje4Boton" class="btn btn-primary" onclick="datosProducto('eje4NombreProducto','eje4PrecioProducto','eje4CantidadProducto')">Enviar Datos</button>
+            <p id="eje4FormulariosResultado"></p>
+        </div>         
+        <br><br>
+        <!-- EJERCICIO 5 ------------------------------------>
+        <div id="ejercicio5Formularios" class="was-validated">
+            <h4>EJERCICIO 5</h4>
+            <h6>Crea un formulario para elegir la talla y el color de una camiseta. 
+                - El usuario debe elegir de un select el color entre 5 colores posibles, y la talla de la XS a la XXL. 
+                  Agrega validación Boostrap. Todos los campos son obligatorios. 
+                - Agrega un boton que al hacer click llame a una función que muestre un mensaje con la talla 
+                  y el color de la camiseta elegidos
+            </h6>
+            <div class="mb-3">
+                <label for="eje5TallaCamiseta">Talla Camiseta</label>
+                <select id="eje5TallaCamiseta" class="form-select" style="max-width: 150px;" required>
+                    <option value="xs">XS</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                </select>
+                <br>
+                <label for="eje5ColorCamiseta">Color Camiseta</label>
+                <select id="eje5ColorCamiseta" class="form-select" style="max-width: 150px;" required>
+                    <option value="blanco">Blanco</option>
+                    <option value="amarillo">Amarillo</option>
+                    <option value="rojo">Rojo</option>
+                    <option value="azul">Azul</option>
+                    <option value="verde">Verde</option>
+                    <option value="negro">Negro</option>
+                </select>
+            </div>
+            <button type="button" id="eje5Boton" class="btn btn-primary" onclick="datosCamiseta('eje5TallaCamiseta','eje5ColorCamiseta')">Datos Camiseta</button>
+            <p id="eje5FormulariosResultado"></p>
+        </div>
+        <br><br>
+        <!-- EJERCICIO 6 ------------------------------------>
+        <div id="ejercicio6Formularios" class="was-validated">
+            <h4>EJERCICIO 6</h4>
+            <h6>Crea un formulario para introducir la edad del usuario.
+                - La edad debe ser un numero positivo y es obligatorio. Agrega validación Boostrap.
+                - Agrega un boton que al hacer click llame a una función que muestre un mensaje con la edad en dias, 
+                  la edad en minutos y la edad en segundos
+            </h6>
+            <div class="mb-3">
+                <input type="number" id="eje6Edad" placeholder="Introduce tu edad" style="max-width: 150px;" required min="0">
+            </div>
+            <button type="button" id="eje6Boton" class="btn btn-success" onclick="calculoEdad('eje6Edad')">Calcular Edad</button>
+            <p id="eje6FormulariosResultado"></p>
+        </div>
+        <br><br>
+        <!-- EJERCICIO 7 ------------------------------------>
+        <div id="ejercicio7Formularios" class="was-validated">
+            <h4>EJERCICIO 7</h4>
+            <h6>Crea un formulario para mostrar información sobre un texto.
+                - Crea un elemento textArea que reciba un texto de longitud entre 10 y 100 caracteres. 
+                  Debe ser obligatorio. Agrega validación Boostrap.
+                - Agrega un boton que al hacer click llame a una función que muestre un mensaje con el texto completo en mayusculas, 
+                  la primera letra del texto, la última letra y su longitud
+            </h6>
+            <div class="mb-3">
+                <textarea id="eje7TextArea" rows="2" cols="50" required minlength="10" maxlength="100">Escribe un texto de 10 a 100 caracteres</textarea>            </div>
+            <button type="button" id="eje7Boton" class="btn btn-success" onclick="operacionesTextArea('eje7TextArea')">Operaciones TextArea</button>
+            <p id="eje7FormulariosResultado"></p>
+        </div>
+        <br><br>
+        <!-- EJERCICIO 8 ------------------------------------>
+        <div id="ejercicio8Formularios" class="was-validated">
+            <h4>EJERCICIO 8</h4>
+            <h6>Crea un formulario para calcular la nota media.
+                - Agrega 3 elementos que reciban numeros entre 0 y 10 y que no pueden estar vacíos. 
+                  Agrega validación Boostrap.
+                - Agrega un boton que al hacer click llame a una función que muestre un mensaje con la media de los tres números.
+            </h6>
+            <div class="mb-3">
+                <input type="number" id="eje8NumeroNotaMedia1" placeholder="Introduce un número" required min="0" max="10" style="max-width: 150px;">
+                <p class="valid-feedback">El número es correcto</p>
+                <p class="invalid-feedback">El número no es correcto</p>
+            </div>
+                <div class="mb-3">
+                <input type="number" id="eje8NumeroNotaMedia2" placeholder="Introduce un número" required min="0" max="10"  style="max-width: 150px;">
+                <p class="valid-feedback">El número es correcto</p>
+                <p class="invalid-feedback">El número no es correcto</p>
+            </div>
+            <div class="mb-3">
+                <input type="number" id="eje8NumeroNotaMedia3" placeholder="Introduce un número" required min="0" max="10" style="max-width: 150px;">
+                <p class="valid-feedback">El número es correcto</p>
+                <p class="invalid-feedback">El número no es correcto</p>
+            </div>
+            <button type="button" id="eje8Boton" class="btn btn-success" onclick="calculoNotaMedia('eje8NumeroNotaMedia1','eje8NumeroNotaMedia2','eje8NumeroNotaMedia3')">Calcular Nota Media</button>
+            <p id="eje8FormulariosResultado"></p>
+        </div>
+        <br><br>
+        <!-- EJERCICIO 9 ------------------------------------>
+        <div id="ejercicio9Formularios" class="was-validated">
+            <h4>EJERCICIO 9</h4>
+            <h6>Crea un formulario para que el usuario pueda seleccionar una cantidad de camisetas, 
+                que puede ser vacio, 1,2 o 3, una cantidad de zapatos también entre vacio, 1,2 o 3 y una cantidad de sombreros, 
+                que puede ser vacio, 1,2, o 3.
+              - Agrega 1 elemento para seleccionar la cantidad de cada producto. El elemento select puede estar vacio.
+              - Agrega un boton que al hacer click llame a una función que muestre un mensaje con el nombre de cada producto y su cantidad. 
+                Si ha dejado vacio, no mostrará nada en su cantidad
+            </h6>
+            <div class="mb-3">
+                <label for="eje9CantidadCamisetas">Cantidad Camisetas</label>
+                <select id="eje9CantidadCamisetas" class="form-select" style="max-width: 150px;" required>
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <br>
+                <label for="eje9CantidadSombreros">Cantidad Sombreros</label>
+                <select id="eje9CantidadSombreros" class="form-select" style="max-width: 100px;" required>
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <button type="button" id="eje9Boton" class="btn btn-primary" onclick="cantidadesProductos('Camisetas','eje9CantidadCamisetas','Sombreros','eje9CantidadSombreros')">Enviar Datos</button>
+            <p id="eje9FormulariosResultado"></p>
+        </div>
+        <br><br>       
+        <!-- EJERCICIO 10 ------------------------------------>
+        <div id="ejercicio10Formularios" class="was-validated">
+            <h4>EJERCICIO 10</h4>
+            <h6>Crea un formulario para que el usuario pueda introducir el nombre de su mascota, y seleccionar el tipo: 
+                perro, gato, tortuga, pajaro.
+              - Agrega 1 elemento agregar el nombre de la mascota y el tipo. 
+                Ambos pueden estar vacios (el usuario puede no tener mascota, o no ser de ninguno de esos tipos)
+              - Agrega un boton que al hacer click llame a una función que muestre un mensaje con los datos de la mascota, 
+                es decir, nombre y tipo
+            </h6>
+            <div class="mb-3">
+                <input type="text" id="eje10NombreMascota" placeholder="Introduce el nombre de tu mascota" style="min-width: 280px;">
+            </div>
+            <div class="mb-3">
+                <label for="eje10TipoMascota">Tipo Mascota</label>
+                <select id="eje10TipoMascota" class="form-select" style="max-width: 150px;">
+                    <option value=""></option>
+                    <option value="perro">perro</option>
+                    <option value="gato">gato</option>
+                    <option value="tortuga">tortuga</option>
+                    <option value="pajaro">pajaro</option>
+                </select>
+            </div>
+            <button type="button" id="eje10Boton" class="btn btn-warning" onclick="tuMascota('eje10NombreMascota','eje10TipoMascota')">Enviar Datos</button>
+            <p id="eje10FormulariosResultado"></p>
+        </div>
+        <br><br>    
+    </div> <!--contenidoEjercicios-->
+
+    
+
+<!------------------------------------------------------------------------------------------------------------>
+<!-- HTML -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Título del Modal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Aquí se mostrarán los valores -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // JavaScript
+    function mostrarModal(titulo, valor1, valor2) {
+      document.getElementById('exampleModalLabel').innerText = titulo;
+      document.getElementById('modalBody').innerHTML = `
+        <p>Valor 1: ${valor1}</p>
+        <p>Valor 2: ${valor2}</p>
+      `;
+      // Muestra el modal
+      var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+      modal.show();
+    }
+  </script>
+  
+    <script src="js/e4-formularios-funciones-eventos.js"></script>
+    <script src="js/e4-ejercicios-formularios-funciones-eventos.js"></script>
+</body>
+
+</html>
