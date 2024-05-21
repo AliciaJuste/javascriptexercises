@@ -105,10 +105,13 @@ function datosCamiseta(idTallaCamiseta, idColorCamiseta) {
 - Agrega un boton que al hacer click llame a una función que muestre un mensaje con la edad en dias, 
   la edad en minutos y la edad en segundos.*/
 function calculoEdad(idEdad) {
-  let edadAnyos = parseFloat(document.getElementById(idEdad).value);
-  let edadDias = edadAnyos * 365;
-  let edadMinutos = edadDias * 24;
-  let edadSegundos = edadMinutos *60;
+  let edadAnyos = parseInt(document.getElementById(idEdad).value);
+  const DIAS_ANYO = 365;
+  const HORAS_DIA = 24;
+  const MINUTOS_HORA = 60;
+  let edadDias = edadAnyos * DIAS_ANYO;
+  let edadMinutos = edadDias * HORAS_DIA * MINUTOS_HORA;
+  let edadSegundos = edadMinutos * MINUTOS_HORA;
   let mensaje = "RESULTADO\nHas vivido " + edadDias + " días\nHas vivido " + edadMinutos + " minutos\nHas vivido " + edadSegundos + " segundos";
   imprimir(mensaje,"eje6FormulariosResultado");
 }
