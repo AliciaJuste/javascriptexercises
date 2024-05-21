@@ -3,69 +3,86 @@
 
 <head>
     <title>Javascript desde 0 con Ejercicios</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
-
     <div class="p-5 bg-dark text-white text-center">
         <h1>Bootcamp QA: Condicionales</h1>
-        <p><a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals">Condicionales</a></p>
+        <p>
+            <a
+                href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals">Condicionales</a>
+        </p>
     </div>
-    
+
     <div id="ejemplosCondicionales" class="container mt-5">
-        <h3>Ejemplo 1: Condicionales if else. Comprobar si un valor es igual a otro</h3>
+        <h2>EJEMPLOS CONDICIONALES</h2>
+        <h4>
+            Ejemplo 1: Condicionales if else. Comprobar si un valor es igual a otro
+        </h4>
         <form id="ejemplo1Condicionales" class="was-validated">
             <div class="mb-3">
-                <input type="number" id="e1numero" placeholder="Introduce un numero" required
-                    class="form-control">
+                <input type="number" id="e1numero" placeholder="Introduce un numero" required class="form-control" />
                 <p class="valid-feedback">correcto</p>
-                <p class="invalid-feedback">El campo numero es obligatorio </p>
+                <p class="invalid-feedback">El campo numero es obligatorio</p>
             </div>
-            <button type="button" class="btn btn-success" onclick="numeroEsCinco()">Enviar</button>
+            <button type="button" class="btn btn-success" onclick="numeroEsCinco()">
+                Enviar
+            </button>
         </form>
         <p id="ej1resultado"></p>
 
-        <h3>Ejemplo 2: Condicionales if else. Comprobar si un valor es mayor que otro</h3>
+        <h4>
+            Ejemplo 2: Condicionales if else. Comprobar si un valor es mayor que
+            otro
+        </h4>
         <form id="ejemplo2Condicionales" class="was-validated">
             <div class="mb-3">
-                <input type="number" id="e2numero" placeholder="Introduce un numero" required
-                    class="form-control">
+                <input type="number" id="e2numero" placeholder="Introduce un numero" required class="form-control" />
                 <p class="valid-feedback">correcto</p>
-                <p class="invalid-feedback">El campo numero es obligatorio </p>
+                <p class="invalid-feedback">El campo numero es obligatorio</p>
             </div>
-            <button type="button" class="btn btn-success" onclick="numeroMayorCinco()">Enviar</button>
+            <button type="button" class="btn btn-success" onclick="numeroMayorCinco()">
+                Enviar
+            </button>
         </form>
         <p id="ej2resultado"></p>
 
-        <h3>Ejemplo 3: Condicionales if else. Comparar textos</h3>
+        <h4>Ejemplo 3: Condicionales if else. Comparar textos</h4>
         <form id="ejemplo2Condicionales" class="was-validated">
             <div class="mb-3">
-                <input type="text" id="e3ciudad" placeholder="Introduce una ciudad" required
-                    class="form-control">
+                <input type="text" id="e3ciudad" placeholder="Introduce una ciudad" required class="form-control" />
                 <p class="valid-feedback">correcto</p>
-                <p class="invalid-feedback">El campo numero es obligatorio </p>
+                <p class="invalid-feedback">El campo numero es obligatorio</p>
             </div>
-            <button type="button" class="btn btn-success" onclick="ciudadNoEsMalaga()">Enviar</button>
+            <button type="button" class="btn btn-success" onclick="ciudadNoEsMalaga()">
+                Enviar
+            </button>
         </form>
         <p id="ej3resultado"></p>
 
-        <h3>Ejemplo 4: Condicionales if else. Validar Formulario</h3>
+        <h4>Ejemplo 4: Condicionales if else. Validar Formulario</h4>
         <form id="ejemplo4Condicionales" class="was-validated">
             <div class="mb-3">
                 <input type="text" id="e4animal" placeholder="Introduce un animal" required minlength="4" maxlength="10"
-                    class="form-control">
+                    class="form-control" />
                 <p class="valid-feedback">correcto</p>
-                <p class="invalid-feedback">El nombre del animal debe tener entre 4 y 10 caracteres. </p>
+                <p class="invalid-feedback">
+                    El nombre del animal debe tener entre 4 y 10 caracteres.
+                </p>
             </div>
-            <button type="button" class="btn btn-success" onclick="mostrarNombreDelAnimal()">Enviar</button>
+            <button type="button" class="btn btn-success" onclick="mostrarNombreDelAnimal()">
+                Enviar
+            </button>
         </form>
         <p id="ej4resultado"></p>
 
-        <h3>Ejemplo 5: Condicionales multiples if else. Mostrar precio segun producto elegido</h3>
+        <h4>
+            Ejemplo 5: Condicionales multiples if else. Mostrar precio segun
+            producto elegido
+        </h4>
         <form id="ejemplo5Condicionales" class="was-validated">
             <div class="mb-3">
                 <select id="e5productos">
@@ -74,37 +91,223 @@
                     <option value="chaqueta">Chaqueta</option>
                     <option value="gorra">Gorra</option>
                 </select>
-
             </div>
-            <button type="button" class="btn btn-success" onclick="mostrarPrecio()">Ver Precio</button>
+            <button type="button" class="btn btn-success" onclick="mostrarPrecio()">
+                Ver Precio
+            </button>
         </form>
         <p id="ej5resultado"></p>
 
-        <h3>Ejemplo 6: Condicionales if else anidados. Si elige destino paris, tiene un descuento de 100 euros si se va por mas de 10 dias. </h3>
+        <h4>
+            Ejemplo 6: Condicionales if else anidados. Si elige destino paris, tiene
+            un descuento de 100 euros si se va por mas de 10 dias.
+        </h4>
         <form id="ejemplo6Condicionales" class="was-validated">
             <div class="mb-3">
-                    <select id="e6destinos">
-                        <option value="paris">Paris 10 euros</option>
-                        <option value="newyork">Nueva York 20 euros</option>
-                        <option value="roma">Roma 30 euros</option>
-                        <option value="canarias">Canarias 40 euros</option>
-                    </select>
-                </div>
+                <select id="e6destinos">
+                    <option value="paris">Paris 10 euros</option>
+                    <option value="newyork">Nueva York 20 euros</option>
+                    <option value="roma">Roma 30 euros</option>
+                    <option value="canarias">Canarias 40 euros</option>
+                </select>
+            </div>
             <div class="mb-3">
                 <input type="number" id="e6numerodedias" placeholder="Elige el numero de dias" required min="1"
-                    class="form-control">
+                    class="form-control" />
                 <p class="valid-feedback">correcto</p>
-                <p class="invalid-feedback">Debes irte al menos un dia. </p>
+                <p class="invalid-feedback">Debes irte al menos un dia.</p>
             </div>
-            <button type="button" class="btn btn-success" onclick="mostrarPrecioViaje()">Ver Precio</button>
+            <button type="button" class="btn btn-success" onclick="mostrarPrecioViaje()">
+                Ver Precio
+            </button>
         </form>
         <p id="ej6resultado"></p>
-
     </div>
-    
+    <br />
+    <hr />
+    <!-- EJERCICIOS --------------------------------------------------------------------------------------------------------->
+    <div id="ejerciciosCondicionales" class="container mt-5">
+        <h2>EJERCICIOS CONDICIONALES</h2>
+        <!-- EJERCICIO 1 ---------------->
+        <div id="ejercicio1Condicionales">
+            <h4>Ejercicio 1</h4>
+            <h6>Crea un formulario para que el usuario introduzca su edad y vea un
+                mensaje indicando si es mayor de edad o no. - Agrega un elemento al
+                formulario para introducir un numero. Este campo no puede estar vacio.
+                - Agrega un boton que al hacer click llame a una funcion que muestre
+                un mensaje es mayor de edad, si su edad es igual o mayor a 18 años y
+                un mensaje es menor de edad de lo contrario
+            </h6>
+            <form id="eje1CondicionalesForm" class="was-validated">
+                <div class="mb-3">
+                    <input type="number" id="eje1Edad" placeholder="Introduce tu edad" required class="form-control" />
+                    <p class="valid-feedback">El dato introducido es correcto</p>
+                    <p class="invalid-feedback">El campo edad no puede estar vacio</p>
+                </div>
+                <button type="button" class="btn btn-success" onclick="esMayorDeEdad()">
+                    Enviar
+                </button>
+            </form>
+            <p id="eje1Resultado"></p>
+        </div>
+        <br />
+        <!-- EJERCICIO 2 ---------------->
+        <div id="ejercicio2Condicionales">
+            <h4>Ejercicio 2</h4>
+            <h6>Crea un formulario que indique cual es el mayor de dos numeros. -
+                Agrega dos elementos al formulario que reciban dos numeros enteros.
+                Este campo no puede estar vacio. - Agrega un boton que al hacer click
+                llame a una funcion que indique cual de los dos numeros es el mayor.*/
+            </h6>
+            <form id="eje2CondicionalesForm" class="was-validated">
+                <div class="mb-3">
+                    <input type="number" id="eje2Numero1" placeholder="Introduce un numero" required
+                        class="form-control" />
+                    <p class="valid-feedback">El número introducido es correcto</p>
+                    <p class="invalid-feedback">El número es obligatorio</p>
+                </div>
+                <div class="mb-3">
+                    <input type="number" id="eje2Numero2" placeholder="Introduce otro numero" required
+                        class="form-control" />
+                    <p class="valid-feedback">El número introducido es correcto</p>
+                    <p class="invalid-feedback">El número es obligatorio</p>
+                </div>
+                <button type="button" class="btn btn-success" onclick="cualEsElNumeroMayor()">
+                    Enviar
+                </button>
+            </form>
+            <p id="eje2Resultado"></p>
+        </div>
+        <br />
+        <!-- EJERCICIO 3 ---------------->
+        <div id="ejercicio3Condicionales">
+            <h4>Ejercicio 3</h4>
+            <h6>Crea un formulario para que el usuario introduzca su edad y vea un
+                mensaje indicando si es mayor de edad o no. - Agrega un elemento al
+                formulario para introducir un numero. Este campo no puede estar vacio.
+                - Agrega un boton que al hacer click llame a una funcion que muestre
+                un mensaje es mayor de edad, si su edad es igual o mayor a 18 años y
+                un mensaje es menor de edad de lo contrario.
+            </h6>
+            <form id="eje3CondicionalesForm" class="was-validated">
+                <div class="mb-3">
+                    <input type="number" id="eje3Edad" placeholder="Introduce tu edad" required class="form-control" />
+                    <p class="valid-feedback">El dato introducido es correcto</p>
+                    <p class="invalid-feedback">El campo edad no puede estar vacio</p>
+                </div>
+                <button type="button" class="btn btn-success" onclick="esMayorDeEdad2()">
+                    Enviar
+                </button>
+            </form>
+            <p id="eje3Resultado"></p>
+        </div>
+        <br>
+        <!-- EJERCICIO 4 ---------------->
+        <div id="ejercicio4Condicionales">
+            <h4>Ejercicio 4</h4>
+            <h6>Crea un formulario para que el usuario introduzca su nota y vea si esta aprobado o suspenso.
+                - Agrega un elemento al formulario para introducir un numero. Este campo no puede estar vacio y debe ser entre 0 y 10.
+                - ?????
+            </h6>
+            <form id="eje4CondicionalesForm" class="was-validated">
+                <div class="mb-3">
+                    <input type="number" id="eje4Nota" placeholder="Introduce tu nota" required class="form-control" step="0.01" min="0" max="10" />
+                    <p class="valid-feedback">El dato introducido es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio y debe estar entre 0 y 10</p>
+                </div>
+                <button type="button" class="btn btn-success" onclick="heAprobado()">
+                    Enviar
+                </button>
+            </form>
+            <p id="eje4Resultado"></p>
+        </div>
+        <br>
+        <!-- EJERCICIO 5 ---------------->
+        <div id="ejercicio5Condicionales">
+            <h4>Ejercicio 5</h4>
+            <h6>Crea un formulario para que el usuario introduzca su nombre y le diga si es un nombre largo o corto.
+                - Agrega un elemento al formulario para introducir un nombre. Este campo no puede estar vacio.
+                - Agrega un boton que al hacer click llame a una funcion que muestre un mensaje es un nombre largo, 
+                  si tiene mas de 10 caracteres o es un nombre corto si tiene menos de 10.
+            </h6>
+            <form id="eje5CondicionalesForm" class="was-validated">
+                <div class="mb-3">
+                    <input type="text" id="eje5Nombre" placeholder="Introduce tu nombre" required class="form-control" />
+                    <p class="valid-feedback">El dato introducido es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio</p>
+                </div>
+                <button type="button" class="btn btn-success" onclick="esNombreLargo()">
+                    Enviar
+                </button>
+            </form>
+            <p id="eje5Resultado"></p>
+        </div>
+        <br>
+        <!-- EJERCICIO 6 ---------------->
+        <div id="ejercicio6Condicionales">
+            <h4>Ejercicio 6</h4>
+            <h6>Crea un formulario para ver la estacion del año segun el mes introducido.
+                - Agrega un elemento select al formulario para seleccionar un mes. Este campo no puede estar vacio.
+                - ???
+            </h6>
+            <form id="eje6CondicionalesForm" class="was-validated">
+                <div class="mb-3">
+                    <select id="eje6Mes">
+                        <option value="enero">Enero</option>
+                        <option value="febrero">Febrero</option>
+                        <option value="marzo">Marzo</option>
+                        <option value="abril">Abril</option>
+                        <option value="mayo">Mayo</option>
+                        <option value="junio">Junio</option>
+                        <option value="julio">Julio</option>
+                        <option value="agosto">Agosto</option>
+                        <option value="septiembre">Septiembre</option>
+                        <option value="octubre">Octubre</option>
+                        <option value="noviembre">Noviembre</option>
+                        <option value="diciembre">Diciembre</option>                     
+                    </select>
+                </div>
+                <button type="button" class="btn btn-warning" onclick="queEstacionEs()">
+                    Enviar
+                </button>
+            </form>
+            <p id="eje6Resultado"></p>
+        </div>
+        <!-- EJERCICIO 7 ---------------->
+        <div id="ejercicio6Condicionales">
+            <h4>Ejercicio 7</h4>
+            <h6>Crea una calculadora.
+                - Agrega un formulario donde el usuario pueda introducir dos numeros y seleccionar la operacion suma, resta, multiplicacion o division. 
+                  Los campos no pueden estar vacios.
+                - Agrega un boton que al hacer click llame a una funcion que muestre el resultado de la operación seleccionada.
+            </h6>
+            <form id="eje7CondicionalesForm" class="was-validated">
+                <div class="mb-3">
+                    <input type="number" id="eje7Number1" placeholder="Introduce un número" required>
+                    <p class="valid-feedback">El número introducido es correcto</p>
+                    <p class="invalid-feedback">El número es obligatorio</p>
+                </div>
+                <div class="mb-3">
+                    <input type="number" id="eje7Number2" placeholder="Introduce un número" required>
+                    <p class="valid-feedback">El número introducido es correcto</p>
+                    <p class="invalid-feedback">El número es obligatorio</p>
+                </div>                
+                <select id="eje7Operacion">
+                        <option value="+">Sumar</option>
+                        <option value="-">Restar</option>
+                        <option value="*">Multiplicar</option>
+                        <option value="/">Dividir</option>               
+                </select>
+                <button type="button" class="btn btn-success" onclick="calculadora2Numeros()">
+                    Calcular
+                </button>
+            </form>
+            <p id="eje7Resultado"></p>
+        </div>
+    </div> <!-- id="ejerciciosCondicionales" -->
 
-
-    <script src="js/e6-condicionales.js"></script>
+    <script src="js/e5-condicionales.js"></script>
+    <script src="js/e5-ejercicios-condicionales.js"></script>
 </body>
 
 </html>
