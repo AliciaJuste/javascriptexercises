@@ -139,7 +139,7 @@ function calculadora2Numeros() {
     resultado = numero1 - numero2;
   }
   else if (operacion === "*") {
-    resultado = numero1 * numero2;
+    resultado = numero1 * numero2;***************************
   }
   else  {
       resultado = numero1 / numero2;

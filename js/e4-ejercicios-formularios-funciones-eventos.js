@@ -168,11 +168,10 @@ function cantidadesProductos(producto1, idCantidadProducto1, producto2, idCantid
     let nombreMascota = document.getElementById(idNombreMascota).value;
     let tipoMascota = document.getElementById(idTipoMascota).value;
     let mensaje = "RESULTADO\nTu mascota se llama " + nombreMascota;
-    if (tipoMascota == "") {
-      mensaje = "RESULTADO\nTu mascota se llama " + nombreMascota;
+    
+    if (tipoMascota === "") {
+      mensaje += " y es un " + tipoMascota;
     }
-    else {
-      mensaje = mensaje + " y es un/a " + tipoMascota;
-    }
+    
     imprimir(mensaje, "eje10FormulariosResultado");
   }
