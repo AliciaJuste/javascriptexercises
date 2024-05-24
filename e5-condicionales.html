@@ -206,12 +206,14 @@
         <div id="ejercicio4Condicionales">
             <h4>Ejercicio 4</h4>
             <h6>Crea un formulario para que el usuario introduzca su nota y vea si esta aprobado o suspenso.
-                - Agrega un elemento al formulario para introducir un numero. Este campo no puede estar vacio y debe ser entre 0 y 10.
+                - Agrega un elemento al formulario para introducir un numero. Este campo no puede estar vacio y debe ser
+                entre 0 y 10.
                 - ?????
             </h6>
             <form id="eje4CondicionalesForm" class="was-validated">
                 <div class="mb-3">
-                    <input type="number" id="eje4Nota" placeholder="Introduce tu nota" required class="form-control" step="0.01" min="0" max="10" />
+                    <input type="number" id="eje4Nota" placeholder="Introduce tu nota" required class="form-control"
+                        step="0.01" min="0" max="10" />
                     <p class="valid-feedback">El dato introducido es correcto</p>
                     <p class="invalid-feedback">El dato es obligatorio y debe estar entre 0 y 10</p>
                 </div>
@@ -227,12 +229,13 @@
             <h4>Ejercicio 5</h4>
             <h6>Crea un formulario para que el usuario introduzca su nombre y le diga si es un nombre largo o corto.
                 - Agrega un elemento al formulario para introducir un nombre. Este campo no puede estar vacio.
-                - Agrega un boton que al hacer click llame a una funcion que muestre un mensaje es un nombre largo, 
-                  si tiene mas de 10 caracteres o es un nombre corto si tiene menos de 10.
+                - Agrega un boton que al hacer click llame a una funcion que muestre un mensaje es un nombre largo,
+                si tiene mas de 10 caracteres o es un nombre corto si tiene menos de 10.
             </h6>
             <form id="eje5CondicionalesForm" class="was-validated">
                 <div class="mb-3">
-                    <input type="text" id="eje5Nombre" placeholder="Introduce tu nombre" required class="form-control" />
+                    <input type="text" id="eje5Nombre" placeholder="Introduce tu nombre" required
+                        class="form-control" />
                     <p class="valid-feedback">El dato introducido es correcto</p>
                     <p class="invalid-feedback">El dato es obligatorio</p>
                 </div>
@@ -264,7 +267,7 @@
                         <option value="septiembre">Septiembre</option>
                         <option value="octubre">Octubre</option>
                         <option value="noviembre">Noviembre</option>
-                        <option value="diciembre">Diciembre</option>                     
+                        <option value="diciembre">Diciembre</option>
                     </select>
                 </div>
                 <button type="button" class="btn btn-warning" onclick="queEstacionEs()">
@@ -274,35 +277,162 @@
             <p id="eje6Resultado"></p>
         </div>
         <!-- EJERCICIO 7 ---------------->
-        <div id="ejercicio6Condicionales">
+        <div id="ejercicio7Condicionales">
             <h4>Ejercicio 7</h4>
             <h6>Crea una calculadora.
-                - Agrega un formulario donde el usuario pueda introducir dos numeros y seleccionar la operacion suma, resta, multiplicacion o division. 
-                  Los campos no pueden estar vacios.
-                - Agrega un boton que al hacer click llame a una funcion que muestre el resultado de la operación seleccionada.
+                - Agrega un formulario donde el usuario pueda introducir dos numeros y seleccionar la operacion suma,
+                resta, multiplicacion o division.
+                Los campos no pueden estar vacios.
+                - Agrega un boton que al hacer click llame a una funcion que muestre el resultado de la operación
+                seleccionada.
             </h6>
             <form id="eje7CondicionalesForm" class="was-validated">
                 <div class="mb-3">
-                    <input type="number" id="eje7Number1" placeholder="Introduce un número" required>
+                    <input type="number" id="eje7Number1" placeholder="Introduce un número" required
+                        class="form-control" style="max-width: 220px;">
                     <p class="valid-feedback">El número introducido es correcto</p>
                     <p class="invalid-feedback">El número es obligatorio</p>
                 </div>
                 <div class="mb-3">
-                    <input type="number" id="eje7Number2" placeholder="Introduce un número" required>
+                    <input type="number" id="eje7Number2" placeholder="Introduce un número" required
+                        class="form-control" style="max-width: 220px;">
                     <p class="valid-feedback">El número introducido es correcto</p>
                     <p class="invalid-feedback">El número es obligatorio</p>
-                </div>                
-                <select id="eje7Operacion">
+                </div>
+                <div class="mb-3">
+                    <select id="eje7Operacion">
                         <option value="+">Sumar</option>
                         <option value="-">Restar</option>
                         <option value="*">Multiplicar</option>
-                        <option value="/">Dividir</option>               
-                </select>
+                        <option value="/">Dividir</option>
+                    </select>
+                </div>
                 <button type="button" class="btn btn-success" onclick="calculadora2Numeros()">
                     Calcular
                 </button>
             </form>
             <p id="eje7Resultado"></p>
+        </div>
+        <!-- EJERCICIO 8 ---------------->
+        <div id="ejercicio8Condicionales">
+            <h4>Ejercicio 8</h4>
+            <h6>Crea un formulario que muestre el precio final segun el producto y la forma de pago elegida.
+                - Agrega un formulario donde el usuario pueda elegir entre los siguientes productos: 1. Camiseta 10
+                euros, 2.
+                Sudadera 20 euros, 3. Bufanda 5 euros, este campo es obligatorio y solo puede elegir un producto.
+                Incluye también un elemento donde pueda introducir la cantidad, que es tambien obligatorio y debe ser
+                mayor a 0.
+                - Agrega un boton comprar que al hacer click muestre el precio total del producto elegido teniendo en
+                cuenta la cantidad.
+                Por ejemplo si elige 2 camisetas, el precio final seria 20 euros.
+            </h6>
+            <form id="eje8CondicionalesForm" class="was-validated">
+                <label for="eje8NombreProducto">Nombre Producto</label>
+                <select id="eje8Producto">
+                    <option value="camiseta">Camiseta - 10€</option>
+                    <option value="sudadera">Sudadera - 20€</option>
+                    <option value="bufanda">Bufanda - 5€</option>
+                </select>
+                <br><br>
+                <div class="mb-3">
+                    <input type="number" id="eje8Cantidad" placeholder="Introduce la cantidad de producto" required
+                        min="0" class="form-control" style="max-width: 150px;">
+                    <p class="valid-feedback">El número introducido es correcto</p>
+                    <p class="invalid-feedback">El número es obligatorio y tiene que ser como mínimo 0</p>
+                </div>
+                <button type="button" class="btn btn-success" onclick="precioTotalProducto()">
+                    Precio Total
+                </button>
+            </form>
+            <p id="eje8Resultado"></p>
+        </div>
+        <!-- EJERCICIO 9 ---------------->
+        <div id="ejercicio9Condicionales">
+            <h4>Ejercicio 9</h4>
+            <h6>Crea un formulario calcule el precio total de un hotel segun la habitacion y el numero de noches
+                elegidas.
+                - Agrega un formulario donde el usuario pueda elegir el tipo de habitacion:
+                Suite: 100 euros, habitacion doble: 70 euros, habitacion individual: 50 euros.
+                Este campo es obligatorio.
+                - Otro campo para introducir el numero de noches que debe ser mayor a 0.
+                - Agrega un boton que muestre el precio total. Si el usuario se queda por mas de 5 noches, se le aplica
+                un descuento a la estancia del 20%.
+            </h6>
+            <form id="eje9CondicionalesForm" class="was-validated">
+                <label for="eje9TipoHabitacion">Tipo de Habitación</label>
+                <select id="eje9TipoHabitacion">
+                    <option value="suite">Suite - 100€</option>
+                    <option value="doble">Habitación doble - 70€</option>
+                    <option value="individual">Habitación individual - 50€</option>
+                </select>
+                <br><br>
+                <div class="mb-3">
+                    <label for="eje9CantidadDias">Noches de estancia</label>
+                    <input type="number" id="eje9CantidadDias" placeholder="Introduce el númeo de noches de estancia"
+                        required min="0" class="form-control" style="max-width: 150px;">
+                    <p class="valid-feedback">El número introducido es correcto</p>
+                    <p class="invalid-feedback">El número es obligatorio y tiene que ser como mínimo 0</p>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="precioTotalHabitacion()">
+                    Precio Total
+                </button>
+            </form>
+            <p id="eje9Resultado"></p>
+        </div>
+        <!-- EJERCICIO 10 ---------------->
+        <div id="ejercicio10Condicionales">
+            <h4>Ejercicio 10</h4>
+            <h6>Crea un formulario calcule el precio total del alquiler de un coche.
+                - Agrega un formulario donde el usuario pueda elegir el tipo de coche: 
+                Deluxe: 100 euros, Standard: 70 euros. Basic: 50 euros. Este campo es obligatorio. 
+                - El usuario tambien debe poder elegir el numero de dias, este campo es obligatorio y debe ser mayor a 0. 
+                - El usuario debe introducir tambien su año de nacimiento, este campo es obligatorio.
+                - Y debe elegir el seguro: todo riesgo 20 euros por dia. Basico 5 euros por dia.
+
+                - Agrega un boton que muestre el precio total. Teniendo en cuenta las siguientes reglas:
+                - El usuario debe ser mayor de 25 años, sino mostrara un mensaje indicando que no puede alquilar el coche.
+                - Si el coche se alquila por mas de 7 dias, se aplica un descuento del 10% al alquiler.
+                - Si el usuario ha elegido el seguro basico, debe mostrar ademas del precio final, un mensaje indicando que debe dejar un deposito de 500 euros.
+            </h6>
+            <form id="eje10CondicionalesForm" class="was-validated">
+                <label for="eje10TipoCoche">Tipo de Coche</label>
+                <select id="eje10TipoCoche">
+                    <option value="deluxe">DeLuxe - 100€</option>
+                    <option value="standard">Standard - 70€</option>
+                    <option value="basic">Basic - 50€</option>
+                </select>
+                <br><br>
+                <div class="mb-3">
+                    <label for="eje10DiasAlquiler">Dias Alquiler</label>
+                    <input type="number" id="eje10DiasAlquiler" placeholder="Número de días de alquiler"
+                        required min="0" class="form-control" style="max-width: 280px;">
+                    <p class="valid-feedback">El número introducido es correcto</p>
+                    <p class="invalid-feedback">El número es obligatorio y tiene que ser como mínimo 0</p>
+                </div>
+                <div class="mb-3">
+                    <label for="eje10AnyoNacimiento">Año de Nacimiento</label>
+                    <input type="datetime" id="eje10AnyoNacimiento" placeholder="Introduce tu año de nacimiento"
+                        required class="form-control" style="max-width: 280px;">
+                    <p class="valid-feedback">El año introducido es correcto</p>
+                    <p class="invalid-feedback">Este dato es obligatorio</p>
+                </div>
+                <div>
+                    <label for="tipoSeguro">Tipo de Seguro</label>
+                    <div>
+                        <input type="radio" id="eje10SeguroTodoRiesgo" name="tipoSeguro" value="todo riesgo">
+                        <label for="eje10SeguroTodoRiesgo">Todo Riesgo (20€/dia)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="eje10SeguroBasico" name="tipoSeguro" value="basico">
+                        <label for="eje10SeguroBasico">Básico (5€/dia)</label>
+                    </div>
+                </div>
+                <br>
+                <button type="button" class="btn btn-info" onclick="precioTotalCoche()">
+                    Precio Total
+                </button>
+            </form>
+            <p id="eje10Resultado"></p>
         </div>
     </div> <!-- id="ejerciciosCondicionales" -->
 

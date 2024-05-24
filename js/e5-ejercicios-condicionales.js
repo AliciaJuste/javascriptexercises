@@ -104,18 +104,44 @@ function queEstacionEs() {
   mes = document.getElementById("eje6Mes").value;
   let mensaje = "La estación del año actual es ";
 
-  if (mes === "marzo" || mes === "abril" || mes === "mayo") {
-    mensaje = mensaje + "la primavera";
+  /*  if (mes === "marzo" || mes === "abril" || mes === "mayo") {
+      mensaje += "primavera";
+    }
+    else if (mes === "junio" || mes === "julio" || mes === "agosto") {
+      mensaje += "verano";
+    }
+    else if (mes === "septiembre" || mes === "octubre" || mes === "noviembre") {
+      mensaje += "otoño";
+    }
+    else {
+      mensaje = mensaje + "invierno";
+    }*/
+
+  switch (mes) {
+    case "marzo":
+    case "abril":
+    case "mayo":
+      mensaje += "primavera";
+      break;
+    case "junio":
+    case "julio":
+    case "agosto":
+      mensaje += "verano";
+      break;
+    case "septiembre":
+    case "octubre":
+    case "noviembre":
+      mensaje += "otoño";
+      break;
+    case "diciembre":
+    case "enero":
+    case "febrero":
+      mensaje += "invierno";
+      break;
+    default:
+      mensaje = "No has introducico el mes a comprobar"
   }
-  else if (mes === "junio" || mes === "julio" || mes === "agosto") {
-    mensaje = mensaje + "el verano";
-  }
-  else if (mes === "septiembre" || mes === "octubre" || mes === "noviembre") {
-    mensaje = mensaje + "el otoño";
-  }
-  else {
-    mensaje = mensaje + "el invierno";
-  }
+
   imprimir(mensaje, "eje6Resultado");
 
 }
@@ -124,8 +150,8 @@ function queEstacionEs() {
      Los campos no pueden estar vacios.
    - Agrega un boton que al hacer click llame a una funcion que muestre el resultado de la operación seleccionada.*/
 function calculadora2Numeros() {
-  let numero1 = document.getElementById("eje7Number1").value;
-  let numero2 = document.getElementById("eje7Number2").value;
+  let numero1 = parseFloat(document.getElementById("eje7Number1").value);
+  let numero2 = parseFloat(document.getElementById("eje7Number2").value);
   let selectOperacion = document.getElementById("eje7Operacion");
   let operacion = document.getElementById("eje7Operacion").value;
   let textoOperacion = selectOperacion.options[selectOperacion.selectedIndex].text;
@@ -134,17 +160,17 @@ function calculadora2Numeros() {
 
   if (operacion === "+") {
     resultado = numero1 + numero2;
-  } 
+  }
   else if (operacion === "-") {
     resultado = numero1 - numero2;
   }
   else if (operacion === "*") {
-    resultado = numero1 * numero2;***************************
+    resultado = numero1 * numero2;
   }
-  else  {
-      resultado = numero1 / numero2;
+  else {
+    resultado = numero1 / numero2;
   }
-  mensaje = "El resultado de " + textoOperacion + " " + numero1 + operacion + numero2 + " es " + parseFloat(resultado.toFixed(2));
+  mensaje = "El resultado de " + textoOperacion + " " + numero1 + operacion + numero2 + " es " + resultado.toFixed(2);
   imprimir(mensaje, "eje7Resultado");
 }
 
@@ -154,12 +180,57 @@ function calculadora2Numeros() {
      Incluye también un elemento donde pueda introducir la cantidad, que es tambien obligatorio y debe ser mayor a 0.
    - Agrega un boton comprar que al hacer click muestre el precio total del producto elegido teniendo en cuenta la cantidad. 
      Por ejemplo si elige 2 camisetas, el precio final seria 20 euros.*/
+function precioTotalProducto() {
+  let producto = document.getElementById("eje8Producto").value;
+  let cantidad = parseInt(document.getElementById("eje8Cantidad").value);
+  let precioCamiseta = 10;
+  let precioSudadera = 20;
+  let precioBufanda = 5;
+  let precioTotal = 0;
+
+  switch (producto) {
+    case "camiseta": precioTotal = precioCamiseta * cantidad;
+      break;
+    case "sudadera": precioTotal = precioSudadera * cantidad;
+      break;
+    case "bufanda": precioTotal = precioBufanda * cantidad;
+      break;
+    default: precioTotal = 0;
+
+  }
+
+  let mensaje = "El precio total para " + cantidad + " " + producto + "s es " + precioTotal + "€";
+  imprimir(mensaje, "eje8Resultado");
+
+}
 
 /*9. Crea un formulario calcule el precio total de un hotel segun la habitacion y el numero de noches elegidas.
    - Agrega un formulario donde el usuario pueda elegir el tipo de habitacion: Suite: 100 euros, habitacion doble: 70 euros, habitacion individual: 50 euros. 
      Este campo es obligatorio. Otro campo para introducir el numero de noches que debe ser mayor a 0.
    - Agrega un boton que muestre el precio total. Si el usuario se queda por mas de 5 noches, se le aplica un descuento a la estancia del 20%.*/
+function precioTotalHabitacion() {
+  let habitacion = document.getElementById("eje9TipoHabitacion").value;
+  let cantidad = parseInt(document.getElementById("eje9CantidadDias").value);
+  let precioSuite = 100;
+  let precioHabDoble = 70;
+  let precioHabIndividual = 50;
+  let precioTotalEstancia = 0;
+  let mensaje = "";
 
+  switch (habitacion) {
+    case "suite": precioTotalEstancia = precioSuite * cantidad;
+      break;
+    case "doble": precioTotalEstancia = precioHabDoble * cantidad;
+      break;
+    case "individual": precioTotalEstancia = precioHabIndividual * cantidad;
+      break;
+    default: precioTotalEstancia = 0;
+  }
+
+  mensaje = "El precio total para " + cantidad + " noches en la habitación " + habitacion + " es de " + precioTotalEstancia + "€";
+  imprimir(mensaje, "eje9Resultado");
+
+}
 
 /*10. Crea un formulario calcule el precio total del alquiler de un coche.
    - Agrega un formulario donde el usuario pueda elegir el tipo de coche: Deluxe: 100 euros, Standard: 70 euros. Basic: 50 euros. Este campo es obligatorio. 
@@ -169,4 +240,62 @@ function calculadora2Numeros() {
    - Agrega un boton que muestre el precio total. Teniendo en cuenta las siguientes reglas:
    - El usuario debe ser mayor de 25 años, sino mostrara un mensaje indicando que no puede alquilar el coche.
    - Si el coche se alquila por mas de 7 dias, se aplica un descuento del 10% al alquiler.
-   - Si el usuario ha elegido el seguro basico, debe mostrar ademas del precio final, un mensaje indicando que debe dejar un deposito de 500 euros. */
+   - Si el usuario ha elegido el seguro basico, debe mostrar ademas del precio final, 
+     un mensaje indicando que debe dejar un deposito de 500 euros. */
+function precioTotalCoche() {
+  let tipoCoche = document.getElementById("eje10TipoCoche").value;
+  let diasAlquiler = parseInt(document.getElementById("eje10DiasAlquiler").value);
+  let edadConductor = 2024 - parseInt(document.getElementById("eje10AnyoNacimiento").value);
+  let tipoSeguro = document.querySelector('input[name="tipoSeguro"]:checked').value;
+
+  let precioCocheDeLuxe = 100;
+  let precioCocheStandard = 70;
+  let precioCocheBasic = 50;
+  let precioSeguroTodoRiesgo = 20;
+  let precioSeguroBasico = 5;
+  let precioTotalAlquiler = 0;
+  let precioTotalSeguro = 0;
+  let precioTotal = 0;
+  let mensaje = "";
+
+
+  if (edadConductor >= 25) {
+    switch (tipoCoche) {
+      case "deluxe":
+        precioTotalAlquiler = precioCocheDeLuxe * diasAlquiler;
+        break;
+      case "standard":
+        precioTotalAlquiler = precioCocheStandard * diasAlquiler;
+        break;
+      case "basic":
+        precioTotalAlquiler = precioCocheBasic * diasAlquiler;
+        break;
+      default: precioTotalAlquiler = 0;
+    }
+
+    if (diasAlquiler > 7) {
+      precioTotalAlquiler -= precioTotalAlquiler * 0.10;
+    }
+    
+    mensaje = "El precio total para alquilar el coche " + tipoCoche + " durante " + diasAlquiler + " días es de " + precioTotalAlquiler + "€.";
+    mensaje += "\nEl precio total del seguro " + tipoSeguro + " para " + diasAlquiler + " días es de ";
+
+    if (tipoSeguro === "basico") {
+      precioTotalSeguro = precioSeguroBasico * diasAlquiler;
+      mensaje += precioTotalSeguro + " €.";
+      mensaje += "\nNOTA: Le recordamos que para el seguro básico debe dejar un depósito de 500€";
+    }
+    else {
+      precioTotalSeguro = precioSeguroTodoRiesgo * diasAlquiler;
+      mensaje += precioTotalSeguro + " €.";
+    }
+    precioTotal = precioTotalAlquiler + precioTotalSeguro;
+    mensaje += "\nEl precio total de alquiler y seguro es de " + precioTotal + "€."; 
+  }
+  else {
+    mensaje = "El conductor es menor de 25 años y no puede alquilar ningún coche.";
+  }
+
+  imprimir(mensaje, "eje10Resultado");
+
+  }

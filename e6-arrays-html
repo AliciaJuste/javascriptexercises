@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript desde 0 con Ejercicios</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="p-5 bg-dark text-white text-center">
+        <h1>Bootcamp QA: Arrays</h1>
+        <p><a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Arrays">Arrays Javascript</a></p>
+    </div>
+    <br>
+
+    <div id="ejemplosArrays" class="container mt-5">
+        <h3>Ejemplo 1: Crear un array y mostrarlo</h3>
+        <p>Mostrar una lista de la compra</p>
+        <p id="e1listaresultado"></p>
+        <button type="button" class="btn btn-success" onclick="mostrarLista()">Mostrar Lista de la compra</button>
+        <h3>Ejemplo 2: Mostrar la longitud del array, el primer elemento y el ultimo</h3>
+        <button type="button" class="btn btn-success" onclick="mostrarInfoLista()">Mostrar informacion de la lista</button>
+        <p id="e2listainfo"></p>
+        <h3>Ejemplo 3: Cambiar el valor de un elemento de la lista (editar la lista)</h3>
+        <form id="e3formulario" class="was-validated">
+            <div class="mb-3">
+                <input type="number" id="e3posicion" placeholder="Introduce la posicion del elemento que quieres modificar" required min="1"
+                    class="form-control">
+                <p class="valid-feedback">Correcto</p>
+                <p class="invalid-feedback">El campo es obligatorio y debetener un valor mayor a 1</p>
+            </div>
+            <div class="mb-3">
+                <input type="texto" id="e3nuevovalor" placeholder="Introduce el nuevo valor para tu lista de la compra" required
+                    class="form-control">
+                <p class="valid-feedback">Correcto</p>
+                <p class="invalid-feedback">El campo es obligatorio</p>
+            </div>
+            <button type="button" class="btn btn-success" onclick="modificarLista()">Modificar Lista</button>
+        </form>
+        <h3>Ejemplo 4: Agregar elementos al final de la lista</h3>
+        <form id="e4formularioelementolista" class="was-validated">
+            <div class="mb-3">
+                <input type="texto" id="e4elementonuevolista" placeholder="Introduce el articulo que quieras agregar a tu lista de la compra" required
+                    class="form-control">
+                <p class="valid-feedback">Correcto</p>
+                <p class="invalid-feedback">El campo es obligatorio</p>
+            </div>
+
+
+            <button type="button" class="btn btn-success" onclick="agregar()">Agregar</button>
+        </form>
+
+       <h3>Ejemplo 5: Eliminar elementos del final de la lista</h3>
+       <button type="button" class="btn btn-success" onclick="eliminarUltimoElemento()">Eliminar Ultimo Elemento</button>
+       <p id="e5elementoEliminado"></p>
+
+       <h3>Ejemplo 6: Eliminar un elemento concreto de la lista</h3>
+       <form id="e6formulario" class="was-validated">
+        <div class="mb-3">
+            <input type="number" id="e6posicion" placeholder="Introduce la posicion del elemento que quieres eliminar" required min="1"
+                class="form-control">
+            <p class="valid-feedback">Correcto</p>
+            <p class="invalid-feedback">El campo es obligatorio y debetener un valor mayor a 1</p>
+        </div>
+        <button type="button" class="btn btn-success" onclick="eliminarPosicionElegida()">Eliminar elemento en la posicion elegida</button>
+    </form>
+
+    <h3>Ejemplo 7: Ordenar lista por orden alfabetico ASSCI descendente (reverse)</h3>
+       <button type="button" class="btn btn-success" onclick="ordenarLista()">Ordenar lista</button>
+       <p id="e5elementoEliminado"></p>
+    
+       <h3>Ejemplo 8: Obtener la posicion de un elemento de la lista, y -1 si no se encuentra</h3>
+       <form id="e8formulario" class="was-validated">
+        <div class="mb-3">
+            <input type="text" id="e8elementoabuscar" placeholder="Introduce el texto del elemento que quieres buscar" required
+                class="form-control">
+            <p class="valid-feedback">Correcto</p>
+            <p class="invalid-feedback">El campo es obligatorio</p>
+        </div>
+        <button type="button" class="btn btn-success" onclick="verPosicionElemento()">Ver la posicion del elemento</button>
+    </form>
+    <p id="e8resultado"></p>
+    </div>
+
+    <script src="js/e7-arrays.js"></script>
+</body>
+
+</html>
