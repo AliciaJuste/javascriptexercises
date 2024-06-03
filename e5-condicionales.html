@@ -378,16 +378,17 @@
                 que debe dejar un deposito de 500 euros.
             </h6>
             <form id="eje9CondicionalesForm" class="was-validated">
-                <label for="eje9TipoCoche">Tipo de Coche</label>
-                <select id="eje9TipoCoche">
-                    <option value="deluxe">DeLuxe - 100€</option>
-                    <option value="standard">Standard - 70€</option>
-                    <option value="basic">Basic - 50€</option>
-                </select>
-                <br><br>
+                <div class="mb-3">
+                    <label for="eje9TipoCoche">Tipo de Coche</label>
+                    <select id="eje9TipoCoche" class="form-control" style="max-width: 280px;">
+                        <option value="deluxe">DeLuxe - 100€</option>
+                        <option value="standard">Standard - 70€</option>
+                        <option value="basic">Basic - 50€</option>
+                    </select>
+                </div>
                 <div class="mb-3">
                     <label for="eje9DiasAlquiler">Dias Alquiler</label>
-                    <input type="number" id="eje9DiasAlquiler" placeholder="Número de días de alquiler" required min="0"
+                    <input type="number" id="eje9DiasAlquiler" placeholder="Número de días de alquiler" required min="1"
                         class="form-control" style="max-width: 280px;">
                     <p class="valid-feedback">El número introducido es correcto</p>
                     <p class="invalid-feedback">El número es obligatorio y tiene que ser como mínimo 0</p>

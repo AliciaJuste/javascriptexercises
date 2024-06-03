@@ -243,56 +243,70 @@ function precioTotalHabitacion() {
    - Si el coche se alquila por mas de 7 dias, se aplica un descuento del 10% al alquiler.
    - Si el usuario ha elegido el seguro basico, debe mostrar ademas del precio final, 
      un mensaje indicando que debe dejar un deposito de 500 euros. */
+
+//Devuelve el precio del alquiler por día de un coche según su tipo
+function precioCoche() {
+  let precioCoche = 0;
+  let tipoCoche = document.getElementById("eje9TipoCoche").value;
+
+  switch (tipoCoche) {
+    case "deluxe": precioCoche = 100;
+      break;
+    case "standard": precioCoche = 70;
+      break;
+    case "basic": precioCoche = 50;
+      break;
+    default: precioTotalAlquiler = 0;
+  }
+  return precioCoche;
+}
+
 function precioTotalCoche() {
   let tipoCoche = document.getElementById("eje9TipoCoche").value;
   let diasAlquiler = parseInt(document.getElementById("eje9DiasAlquiler").value);
-  let edadConductor = 2024 - parseInt(document.getElementById("eje9AnyoNacimiento").value);
+  //Obtiene la fecha actual para luego conseguir el año actual para la formula de la edad del conductor
+  let currentTime = new Date();
+  let edadConductor = currentTime.getFullYear() - parseInt(document.getElementById("eje9AnyoNacimiento").value);
   let tipoSeguro = document.querySelector('input[name="tipoSeguro"]:checked').value;
-
-  let precioCocheDeLuxe = 100;
-  let precioCocheStandard = 70;
-  let precioCocheBasic = 50;
-  let precioSeguroTodoRiesgo = 20;
   let precioSeguroBasico = 5;
+  let precioSeguroTodoRiesgo = 20;
   let precioTotalAlquiler = 0;
   let precioTotalSeguro = 0;
   let precioTotal = 0;
   let mensaje = "";
 
-
+  //Si el conductor es mayor o igual a 25 años puede alquilar un coche
   if (edadConductor >= 25) {
-    switch (tipoCoche) {
-      case "deluxe":
-        precioTotalAlquiler = precioCocheDeLuxe * diasAlquiler;
-        break;
-      case "standard":
-        precioTotalAlquiler = precioCocheStandard * diasAlquiler;
-        break;
-      case "basic":
-        precioTotalAlquiler = precioCocheBasic * diasAlquiler;
-        break;
-      default: precioTotalAlquiler = 0;
-    }
+    precioTotalAlquiler = precioCoche() * diasAlquiler;
 
+    //Si el alquiler es más de 7 días se le aplica un 10% de descuento en el precio del alquiler  
     if (diasAlquiler > 7) {
       precioTotalAlquiler -= precioTotalAlquiler * 0.10;
+      mensaje += "Se le ha aplicado un 10% de descuento por alquilar más de 7 días.\n";
     }
 
-    mensaje = "El precio total para alquilar el coche " + tipoCoche + " durante " + diasAlquiler + " días es de " + precioTotalAlquiler + "€.";
-    mensaje += "\nEl precio total del seguro " + tipoSeguro + " para " + diasAlquiler + " días es de ";
+    mensaje += "El precio total para alquilar el coche " + tipoCoche + " durante " + diasAlquiler + " días es de " + precioTotalAlquiler + "€.\n";
+    mensaje += "El precio total del seguro " + tipoSeguro + " para " + diasAlquiler + " días es de ";
 
     if (tipoSeguro === "basico") {
-      precioTotalSeguro = precioSeguroBasico * diasAlquiler;
-      mensaje += precioTotalSeguro + " €.";
-      mensaje += "\nNOTA: Le recordamos que para el seguro básico debe dejar un depósito de 500€";
+      precioSeguroDia = precioSeguroBasico;
     }
     else {
-      precioTotalSeguro = precioSeguroTodoRiesgo * diasAlquiler;
-      mensaje += precioTotalSeguro + " €.";
+      precioSeguroDia = precioSeguroTodoRiesgo;
     }
+    precioTotalSeguro = precioSeguroDia * diasAlquiler;
+
     precioTotal = precioTotalAlquiler + precioTotalSeguro;
+    
+    mensaje += precioTotalSeguro + " €.";
     mensaje += "\nEl precio total de alquiler y seguro es de " + precioTotal + "€.";
+    
+    //Si el usuario elige el seguro básico se le avisa que tendrá que pagar un depósito de 500€
+    if (tipoSeguro == "basico") {
+      mensaje += "\nNOTA: Le recordamos que para el seguro básico debe dejar un depósito de 500€";
+    }
   }
+  //Si el conductor es menor de 25 años no puede alquilar un coche
   else {
     mensaje = "El conductor es menor de 25 años y no puede alquilar ningún coche.";
   }
