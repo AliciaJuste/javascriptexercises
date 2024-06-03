@@ -84,3 +84,24 @@ function verPosicionElemento() {
         mensaje = "El elemento " + elemento + " esta en la posicion con indice " + posicionElemento;
     }
     imprimir(mensaje,"e8resultado");
+
+}
+
+let listaAlumnos = ["Sandra", "Jose", "Rebeca", "Sonia", "Camila", "Rocio", "Alicia", "Reyes", "Mónica", "Cristina"];
+// EJERCICIOS
+/*1. Agrega un boton mostrar alumnos, que al pulsarlo muestre una lista con los nombres de 10 alumnos. */
+function mostrarListaAlumnos() {
+    let mensaje = "Los alumnos son: " + listaAlumnos;
+    imprimir(mensaje, "eje1Resultado");
+}
+
+/*2. Muestra el nombre del alumno de la posicion que elijas. Para ello:
+    Agrega un campo para elegir el alumno que quieren mostrar, no puede estar vacio y debe ser entre 1 y 10.
+    Agrega un boton mostrar alumno, que muestre el nombre del alumno elegido. */
+function alumnoSeleccionado() {
+    let posicionAlumno = parseInt(document.getElementById("eje2PosicionAlumno").value);
+    let mensaje = "";
+
+    mensaje = "El alumno en la posición " + posicionAlumno + " es " + listaAlumnos[posicionAlumno-1];
+    imprimir(mensaje, "eje2Resultado");
+}           

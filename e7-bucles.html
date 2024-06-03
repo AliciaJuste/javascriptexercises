@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript desde 0 con Ejercicios</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="p-5 bg-dark text-white text-center">
+        <h1>Bootcamp QA: Bucles en Javascript</h1>
+        <p><a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Looping_code">Bucles en Javascript</a></p>
+    </div>
+    <br>
+    <div id="ejemplosbucles" class="container mt-5">
+    <h3>Ejemplo 1: Repetir la misma frase 100 veces</h3>
+
+    <button type="button" class="btn btn-success" onclick="mostrarFrase()">Mostrar 100 veces la misma frase</button>
+    <p id="e1solucion"></p>
+
+    <h3>Ejemplo 2: Mostrar la tabla del multiplicar</h3>
+    <div class="mb-3">
+        <input type="number" id="e2tablamultiplicar"
+            placeholder="Introduce el numero del que quieres ver la tabla" required min="0"
+            class="form-control">
+        <p class="valid-feedback">Correcto</p>
+        <p class="invalid-feedback">El campo es obligatorio y debetener un valor mayor a 0</p>
+    </div>
+    <button type="button" class="btn btn-success" onclick="mostrarTabla()">Mostrar tabla</button>
+    <p id="e2solucion"></p>
+
+    </div>
+
+
+    <script src="js/e8-bucles.js"></script>
+</body>
+
+</html>

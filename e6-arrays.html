@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript desde 0 con Ejercicios</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="p-5 bg-dark text-white text-center">
+        <h1>Bootcamp QA: Arrays</h1>
+        <p><a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Arrays">Arrays Javascript</a></p>
+    </div>
+    <br>
+
+    <div id="ejemplosArrays" class="container mt-5">
+        <h3>Ejemplo 1: Crear un array y mostrarlo</h3>
+        <p>Mostrar una lista de la compra</p>
+        <p id="e1listaresultado"></p>
+        <button type="button" class="btn btn-success" onclick="mostrarLista()">Mostrar Lista de la compra</button>
+        <h3>Ejemplo 2: Mostrar la longitud del array, el primer elemento y el ultimo</h3>
+        <button type="button" class="btn btn-success" onclick="mostrarInfoLista()">Mostrar informacion de la
+            lista</button>
+        <p id="e2listainfo"></p>
+        <h3>Ejemplo 3: Cambiar el valor de un elemento de la lista (editar la lista)</h3>
+        <form id="e3formulario" class="was-validated">
+            <div class="mb-3">
+                <input type="number" id="e3posicion"
+                    placeholder="Introduce la posicion del elemento que quieres modificar" required min="1"
+                    class="form-control">
+                <p class="valid-feedback">Correcto</p>
+                <p class="invalid-feedback">El campo es obligatorio y debetener un valor mayor a 1</p>
+            </div>
+            <div class="mb-3">
+                <input type="texto" id="e3nuevovalor" placeholder="Introduce el nuevo valor para tu lista de la compra"
+                    required class="form-control">
+                <p class="valid-feedback">Correcto</p>
+                <p class="invalid-feedback">El campo es obligatorio</p>
+            </div>
+            <button type="button" class="btn btn-success" onclick="modificarLista()">Modificar Lista</button>
+        </form>
+        <h3>Ejemplo 4: Agregar elementos al final de la lista</h3>
+        <form id="e4formularioelementolista" class="was-validated">
+            <div class="mb-3">
+                <input type="texto" id="e4elementonuevolista"
+                    placeholder="Introduce el articulo que quieras agregar a tu lista de la compra" required
+                    class="form-control">
+                <p class="valid-feedback">Correcto</p>
+                <p class="invalid-feedback">El campo es obligatorio</p>
+            </div>
+
+
+            <button type="button" class="btn btn-success" onclick="agregar()">Agregar</button>
+        </form>
+
+        <h3>Ejemplo 5: Eliminar elementos del final de la lista</h3>
+        <button type="button" class="btn btn-success" onclick="eliminarUltimoElemento()">Eliminar Ultimo
+            Elemento</button>
+        <p id="e5elementoEliminado"></p>
+
+        <h3>Ejemplo 6: Eliminar un elemento concreto de la lista</h3>
+        <form id="e6formulario" class="was-validated">
+            <div class="mb-3">
+                <input type="number" id="e6posicion"
+                    placeholder="Introduce la posicion del elemento que quieres eliminar" required min="1"
+                    class="form-control">
+                <p class="valid-feedback">Correcto</p>
+                <p class="invalid-feedback">El campo es obligatorio y debetener un valor mayor a 1</p>
+            </div>
+            <button type="button" class="btn btn-success" onclick="eliminarPosicionElegida()">Eliminar elemento en la
+                posicion elegida</button>
+        </form>
+
+        <h3>Ejemplo 7: Ordenar lista por orden alfabetico ASSCI descendente (reverse)</h3>
+        <button type="button" class="btn btn-success" onclick="ordenarLista()">Ordenar lista</button>
+        <p id="e5elementoEliminado"></p>
+
+        <h3>Ejemplo 8: Obtener la posicion de un elemento de la lista, y -1 si no se encuentra</h3>
+        <form id="e8formulario" class="was-validated">
+            <div class="mb-3">
+                <input type="text" id="e8elementoabuscar"
+                    placeholder="Introduce el texto del elemento que quieres buscar" required class="form-control">
+                <p class="valid-feedback">Correcto</p>
+                <p class="invalid-feedback">El campo es obligatorio</p>
+            </div>
+            <button type="button" class="btn btn-success" onclick="verPosicionElemento()">Ver la posicion del
+                elemento</button>
+        </form>
+        <p id="e8resultado"></p>
+    </div>
+    <br />
+    <hr />
+    <!-- EJERCICIOS --------------------------------------------------------------------------------------------------------->
+    <div id="ejerciciosArrays" class="container mt-5">
+        <div id="ejercicio1Arrays">
+            <h2>EJERCICIOS ARRAYS</h2>
+            <!-- EJERCICIO 1 ---------------->
+            <div id="ejercicio1Arrays">
+                <h4>Ejercicio 1: Mostrar lista alumnos</h4>
+                <h6>Agrega un boton mostrar alumnos, que al pulsarlo muestre una lista con los nombres de 10 alumnos.
+                </h6>
+                <button type="button" class="btn btn-success" onclick="mostrarListaAlumnos()">
+                    Mostrar
+                </button>
+                <p id="eje1Resultado"></p>
+            </div>
+            <br />
+        </div>
+        <br />
+        <!-- EJERCICIO 2 ---------------->
+        <div id="ejercicio2Arrays">
+            <h4>Ejercicio 2:</h4>
+            <h6>Muestra el nombre del alumno de la posicion que elijas. Para ello:
+                Agrega un campo para elegir el alumno que quieren mostrar, no puede estar vacio y debe ser entre 1 y 10.
+                Agrega un boton mostrar alumno, que muestre el nombre del alumno elegido.
+            </h6>
+            <form id="eje2formulario" class="was-validated">
+                <div class="mb-3">
+                    <label for="eje2PosicionAlumno">Posición del alumno a buscar</label>
+                    <input type="text" id="eje2PosicionAlumno" placeholder="Posición" required min="1" max="10" class="form-control" style="max-width: 120px;">
+                    <p class="valid-feedback">El valor es correcto</p>
+                    <p class="invalid-feedback">El campo es obligatorio y tiene que estar entre 1 y 10</p>
+                </div>
+            </form>
+            <button type="button" class="btn btn-success" onclick="alumnoSeleccionado()">
+                Nombre Alumno
+            </button>
+            <p id="eje2Resultado"></p>
+        </div>
+    </div>
+        <!-- 
+Muestra el nombre del alumno de la posicion que elijas. Para ello:
+Agrega un campo para elegir el alumno que quieren mostrar, no puede estar vacio y debe ser entre 1 y 10.
+Agrega un boton mostrar alumno, que muestre el nombre del alumno elegido.
+Agrega un boton mostrar alumnos ordenados, que muestre los alumnos ordenados por nombre.
+Agrega una nueva opcion para agregar un nuevo alumno. Para ello:
+Agrega un campo para introducir el nombre del alumno. No puede estar vacio y debe tener maximo 30 caracteres.
+Agrega un boton agregar, que al pulsarlo agrege al nuevo alumno a la lista y muestre la lista de alumnos actualizada.
+Agrega una opcion para eliminar un alumno de una posicion elegida.
+Agrega un campo para introducir la posicion del alumno a eliminar. Debe ser un numero entre 1 y 500.
+Agrega un boton eliminar, que al pulsarlo, elimine el alumno de la posicion introducida y muestre la lista de alumnos actualizada. Agrega una comprobacion para mostrar un mensaje de error si la posicion introducida es mayor a la longitud total de la lista.
+Agrega una opcion para buscar un alumno. Para ello:
+Agrega un campo para introducir el nombre del alumno a buscar.
+Agrega un boton buscar, que al pulsarlo muentre un mensaje con todos los alumnos que contengan el nombre introducido, sin distinguir entre mayusculas y minusculas.-->
+        <script src="js/e6-arrays.js"></script>
+</body>
+
+</html>
