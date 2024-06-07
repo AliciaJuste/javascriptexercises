@@ -13,30 +13,133 @@
 
     <div class="p-5 bg-dark text-white text-center">
         <h1>Bootcamp QA: Bucles en Javascript</h1>
-        <p><a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Looping_code">Bucles en Javascript</a></p>
+        <p><a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Looping_code">Bucles en
+                Javascript</a></p>
     </div>
     <br>
+    <!-- EJEMPLOS --------------------------------------------------------------------------------------------------------->
     <div id="ejemplosbucles" class="container mt-5">
-    <h3>Ejemplo 1: Repetir la misma frase 100 veces</h3>
+        <h3>EJEMPLOS BuCLES</h3>
+        <div id="ejemplo1bucles">
+            <h3>Ejemplo 1: Repetir la misma frase 100 veces</h3>
 
-    <button type="button" class="btn btn-success" onclick="mostrarFrase()">Mostrar 100 veces la misma frase</button>
-    <p id="e1solucion"></p>
-
-    <h3>Ejemplo 2: Mostrar la tabla del multiplicar</h3>
-    <div class="mb-3">
-        <input type="number" id="e2tablamultiplicar"
-            placeholder="Introduce el numero del que quieres ver la tabla" required min="0"
-            class="form-control">
-        <p class="valid-feedback">Correcto</p>
-        <p class="invalid-feedback">El campo es obligatorio y debetener un valor mayor a 0</p>
+            <button type="button" class="btn btn-success" onclick="mostrarFrase()">Mostrar 100 veces la misma
+                frase</button>
+            <p id="e1solucion"></p>
+        </div>
+        <div id="ejemplo2Bucles">
+            <h3>Ejemplo 2: Mostrar la tabla del multiplicar</h3>
+            <div class="mb-3">
+                <input type="number" id="e2tablamultiplicar"
+                    placeholder="Introduce el numero del que quieres ver la tabla" required min="0"
+                    class="form-control">
+                <p class="valid-feedback">Correcto</p>
+                <p class="invalid-feedback">El campo es obligatorio y debetener un valor mayor a 0</p>
+            </div>
+            <button type="button" class="btn btn-success" onclick="mostrarTabla()">Mostrar tabla</button>
+            <p id="e2solucion"></p>
+        </div>
     </div>
-    <button type="button" class="btn btn-success" onclick="mostrarTabla()">Mostrar tabla</button>
-    <p id="e2solucion"></p>
-
+    <br />
+    <hr />
+    <!-- EJERCICIOS --------------------------------------------------------------------------------------------------------->
+    <div id="ejerciciosBucles" class="container mt-5">
+        <h2>EJERCICIOS ARRAYS</h2>
+        <!-- EJERCICIO 1 ---------------->
+        <div id="ejercicio1Bucles">
+            <h4>Ejercicio 1: Sumar números</h4>
+            <h6>1. Muestra la suma de todos los numeros desde el 0 hasta el introducido por el usuario.
+                a) Agrega un campo para introducir un numero mayor que 0.
+                b) Agrega un boton que al pulsarlo muestre la suma de todos los numeros desde el 1 hasta el numero
+                indicado
+            </h6>
+            <button type="button" class="btn btn-success" onclick="sumarNumeros(dato,'eje1Resultado')">
+                Sumar números
+            </button>
+            <p id="eje1Resultado"></p>
+        </div>
+        <br />
+        <!-- EJERCICIO 2 ---------------->
+        <div id="ejercicio2Bucles">
+            <h4>Ejercicio 2: Montrar N veces una palabra</h4>
+            <h6>2. Muestra una palabra el numero de veces que indique el usuario.
+                a. Agrega un campo para introducir una palabra. Este campo no puede estar vacio.
+                A continuacion agrega un campo para introducir el numero de veces que debe de aparecer la palabra.
+                Debe ser mayor a 0.
+                b. Agrega un boton que al pulsarlo muestre la palabra en mayusculas el numero de veces indicado por el
+                usuario.
+            </h6>
+            <button type="button" class="btn btn-success" onclick="montrarPalabraNVeces(dato,'eje2Resultado')">
+                Mostrar Palabra
+            </button>
+            <p id="eje2Resultado"></p>
+        </div>
+        <br />
+        <!-- EJERCICIO 3 ---------------->
+        <div id="ejercicio3Bucles">
+            <h4>Ejercicio 3: Muestra FLOR N Veces</h4>
+            <h6>3. Muestra AMAPOLA o MARGARITA el numero de veces que indique el usuario, segun la palabra introducida:
+                a. Agrega un campo para introducir una palabra. Este campo no puede estar vacio.
+                A continuacion agrega un campo para introducir el numero de veces que debe de aparecer la palabra.
+                Debe ser mayor a 0.
+                b. Agrega un boton que al pulsarlo muestre el numero de veces indicado, la palabra AMAPOLA,
+                si la palabra introducida por el usuario empieza por VOCAL,
+                que muestre la palabra MARGARITA en cualquier otro caso.
+            </h6>
+            <button type="button" class="btn btn-success" onclick="mostarrFLORNVeces(dato,'eje3Resultado')">
+                Mostrar Palabra
+            </button>
+            <p id="eje3Resultado"></p>
+        </div>
+        <br />
+        <!-- EJERCICIO 4 ---------------->
+        <div id="ejercicio4Bucles">
+            <h4>Ejercicio 4: Listado de números pares</h4>
+            <h6>4. Muestra todos los numeros pares desde el 0 hasta el indicado por el usuario.
+                a. Agrega un campo para introducir un numero. Este campo no puede estar vacio.
+                b. Agrega un boton que al pulsarlo muestre todos los numeros pares, desde el 0 hasta el indicado. 
+                   Nota: Un numero es par si el resto de la division entre 2 es 0. 
+                   Para saber el resto de una division, puedes usar el operador %.          
+            </h6>
+            <button type="button" class="btn btn-success" onclick="mostarrListadoPares(dato,'eje4Resultado')">
+                Muestra listado
+            </button>
+            <p id="eje4Resultado"></p>
+        </div>
+        <br />
+        <div id="ejercicio5Bucles">
+            <h4>Ejercicio 5: Listado de nombres en mayúsculas</h4>
+            <h6>5. Muestra todos los nombres de una lista en mayusculas.
+                a. Agrega un nuevo campo para agregar nombres a una lista. Debe ser obligatorio y tener minimo 3 caracteres.
+                b. Agrega un boton que al pulsarlo agrege el nombre introducido en el formulario a una lista y la muestre por pantalla.
+                c. Agrega un boton que al pulsarlo muestre la lista completa en mayusculas.
+                d. Agrega un nuevo boton que al pulsarlo muestre los nombres de la lista que empiecen por la letra A.          
+            </h6>
+            <button type="button" class="btn btn-success" onclick="mostarListadoEnMayusculas(dato,'eje5Resultado')">
+                Muestra listado
+            </button>
+            <p id="eje5Resultado"></p>
+        </div>
+        <br />
+        <div id="ejercicio6Bucles">
+            <h4>Ejercicio 6: Sumar todos los números</h4>
+            <h6>6.Crea un programa para sumar todos los numeros de una lista.
+                a. Agrega un nuevo campo para agregar notas a una lista. Este campo debe ser numerico, y acepta numeros del 1 al 10 con decimales.
+                b. Agrega un boton agregar, que al pulsarlo agrege la nota introducida a la lista y la muestre.
+                c. Agrega un boton que al pulsarlo muestre la suma total de todos los numeros de la lista, o 0 si esta la lista vacia. 
+                d. Agrega un boton que muestre la nota media de la lista.
+                e. Agrega un boton para indicar si el usuario ha aprobado o no. El usuario esta aprobado si su nota media es igual o mayor a 5.          
+            </h6>
+            <button type="button" class="btn btn-success" onclick="sumarNumerosLista(dato,'eje6Resultado')">
+                Sumar
+            </button>
+            <p id="eje6Resultado"></p>
+        </div>
+        <br />
     </div>
+    <br />
 
-
-    <script src="js/e8-bucles.js"></script>
+    <script src="js/e7-bucles.js"></script>
 </body>
 
 </html>

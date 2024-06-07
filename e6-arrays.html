@@ -103,7 +103,8 @@
                 <h4>Ejercicio 1: Mostrar lista alumnos</h4>
                 <h6>Agrega un boton mostrar alumnos, que al pulsarlo muestre una lista con los nombres de 10 alumnos.
                 </h6>
-                <button type="button" class="btn btn-success" onclick="mostrarListaAlumnos()">
+                <button type="button" class="btn btn-success"
+                    onclick="mostrarListaAlumnos(listaAlumnos,'eje1Resultado')">
                     Mostrar
                 </button>
                 <p id="eje1Resultado"></p>
@@ -113,7 +114,7 @@
         <br />
         <!-- EJERCICIO 2 ---------------->
         <div id="ejercicio2Arrays">
-            <h4>Ejercicio 2:</h4>
+            <h4>Ejercicio 2: Mostrar un alumno según su posición</h4>
             <h6>Muestra el nombre del alumno de la posicion que elijas. Para ello:
                 Agrega un campo para elegir el alumno que quieren mostrar, no puede estar vacio y debe ser entre 1 y 10.
                 Agrega un boton mostrar alumno, que muestre el nombre del alumno elegido.
@@ -121,7 +122,8 @@
             <form id="eje2formulario" class="was-validated">
                 <div class="mb-3">
                     <label for="eje2PosicionAlumno">Posición del alumno a buscar</label>
-                    <input type="text" id="eje2PosicionAlumno" placeholder="Posición" required min="1" max="10" class="form-control" style="max-width: 120px;">
+                    <input type="text" id="eje2PosicionAlumno" placeholder="Posición" required min="1" max="10"
+                        class="form-control" style="max-width: 120px;">
                     <p class="valid-feedback">El valor es correcto</p>
                     <p class="invalid-feedback">El campo es obligatorio y tiene que estar entre 1 y 10</p>
                 </div>
@@ -131,22 +133,79 @@
             </button>
             <p id="eje2Resultado"></p>
         </div>
+        <!-- EJERCICIO 3 ---------------->
+        <div id="ejercicio3Arrays">
+            <h4>Ejercicio 3: Mostrar alumnos ordenados</h4>
+            <h6>Agrega un boton mostrar alumnos ordenados, que muestre los alumnos ordenados por nombre. </h6>
+            <button type="button" class="btn btn-success" onclick="alumnosOrdenados()">
+                Ordenar Alumnos
+            </button>
+            <p id="eje3Resultado"></p>
+        </div>
+        <!-- EJERCICIO 4 ---------------->
+        <div id="ejercicio4Arrays">
+            <h4>Ejercicio 4: Añadir un nuevo alumno</h4>
+            <h6>Agrega una nueva opcion para agregar un nuevo alumno. Para ello:
+                - Agrega un campo para introducir el nombre del alumno. No puede estar vacio y debe tener maximo 30
+                caracteres.
+                - Agrega un boton agregar, que al pulsarlo agrege al nuevo alumno a la lista y muestre la lista de
+                alumnos actualizada.
+            </h6>
+            <form id="eje4ArraysForm" class="was-validated">
+                <div class="mb-3">
+                    <input type="text" id="eje4NuevoAlumno" required max="30" class="form-control"
+                        placeholder="Introduce el nombre del nuevo alumno">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio y tiene que tener como máximo 30 caracteres</p>
+                </div>
+            </form>
+            <button type="button" class="btn btn-success" onclick="agregarAlumno()">Añadir Alumno</button>
+            <p id="eje4Resultado"></p>
+        </div>
+        <!-- EJERCICIO 5 -----------pendiente-----> 
+        <div id="ejercicio5Arrays">
+            <h4>Ejercicio 5:</h4>
+            <h6>Agrega una opcion para eliminar un alumno de una posicion elegida.
+                - Agrega un campo para introducir la posicion del alumno a eliminar. Debe ser un numero entre 1 y 500.
+                - Agrega un boton eliminar, que al pulsarlo, elimine el alumno de la posicion introducida y muestre la
+                lista de alumnos actualizada. Agrega una comprobacion para mostrar un mensaje de error si la posicion
+                introducida es mayor a la longitud total de la lista.
+            </h6>
+            <form id="eje5ArraysForm" class="was-validated">
+                <div class="mb-3">
+                    <label for="eje5PosicionAlumno">Posición del alumno a eliminar</label>
+                    <input type="number" id="eje5PosicionAlumno" required min="1" max="500" class="form-control" 
+                           placeholder="Introduce la posición del alumno ">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio y tiene que estar entre 0 y 500</p>
+                </div>
+            </form>
+            <button type="button" class="btn btn-success" onclick="eliminarAlumnoPosicion()">Eliminar Alumno</button>
+            <p id="eje5Resultado"></p>
+        </div>
+        <!-- EJERCICIO 6 -----------pendiente----->
+        <div id="ejercicio6Arrays">
+            <h4>Ejercicio 6: Buscar un alumno</h4>
+            <h6>Agrega una opcion para buscar un alumno. Para ello:
+                - Agrega un campo para introducir el nombre del alumno a buscar.
+                - Agrega un boton buscar, que al pulsarlo muentre un mensaje con todos los alumnos que contengan el
+                nombre introducido, sin distinguir entre mayusculas y minusculas.
+            </h6>
+            <form id="eje6ArraysForm" class="was-validated">
+                <div class="mb-3">
+                    <input type="text" id="eje6" required max="30" class="form-control"
+                        placeholder="Lo que sea">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio y tiene que tener como máximo 30 caracteres</p>
+                </div>
+            </form>
+            <button type="button" class="btn btn-success" onclick="funcion6()">Añadir Alumno</button>
+            <p id="eje6Resultado"></p>
+        </div>
+
     </div>
-        <!-- 
-Muestra el nombre del alumno de la posicion que elijas. Para ello:
-Agrega un campo para elegir el alumno que quieren mostrar, no puede estar vacio y debe ser entre 1 y 10.
-Agrega un boton mostrar alumno, que muestre el nombre del alumno elegido.
-Agrega un boton mostrar alumnos ordenados, que muestre los alumnos ordenados por nombre.
-Agrega una nueva opcion para agregar un nuevo alumno. Para ello:
-Agrega un campo para introducir el nombre del alumno. No puede estar vacio y debe tener maximo 30 caracteres.
-Agrega un boton agregar, que al pulsarlo agrege al nuevo alumno a la lista y muestre la lista de alumnos actualizada.
-Agrega una opcion para eliminar un alumno de una posicion elegida.
-Agrega un campo para introducir la posicion del alumno a eliminar. Debe ser un numero entre 1 y 500.
-Agrega un boton eliminar, que al pulsarlo, elimine el alumno de la posicion introducida y muestre la lista de alumnos actualizada. Agrega una comprobacion para mostrar un mensaje de error si la posicion introducida es mayor a la longitud total de la lista.
-Agrega una opcion para buscar un alumno. Para ello:
-Agrega un campo para introducir el nombre del alumno a buscar.
-Agrega un boton buscar, que al pulsarlo muentre un mensaje con todos los alumnos que contengan el nombre introducido, sin distinguir entre mayusculas y minusculas.-->
-        <script src="js/e6-arrays.js"></script>
+
+    <script src="js/e6-arrays.js"></script>
 </body>
 
 </html>

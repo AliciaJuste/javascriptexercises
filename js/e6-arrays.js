@@ -3,8 +3,7 @@ let listaCompra = ["tomates","huevos","queso", "fresas", "zanahorias","atun"];
 
 
 function imprimir(mensaje,id){
-    let elemento = document.getElementById(id);
-    elemento.innerText = mensaje;
+    document.getElementById(id).innerText = mensaje;
 }
 
 
@@ -90,9 +89,9 @@ function verPosicionElemento() {
 let listaAlumnos = ["Sandra", "Jose", "Rebeca", "Sonia", "Camila", "Rocio", "Alicia", "Reyes", "Mónica", "Cristina"];
 // EJERCICIOS
 /*1. Agrega un boton mostrar alumnos, que al pulsarlo muestre una lista con los nombres de 10 alumnos. */
-function mostrarListaAlumnos() {
-    let mensaje = "Los alumnos son: " + listaAlumnos;
-    imprimir(mensaje, "eje1Resultado");
+function mostrarListaAlumnos(listado, idResultado) {
+    let mensaje = "\nLos alumnos son: " + listado;
+    imprimir(mensaje, idResultado);
 }
 
 /*2. Muestra el nombre del alumno de la posicion que elijas. Para ello:
@@ -105,3 +104,44 @@ function alumnoSeleccionado() {
     mensaje = "El alumno en la posición " + posicionAlumno + " es " + listaAlumnos[posicionAlumno-1];
     imprimir(mensaje, "eje2Resultado");
 }           
+
+/*3. Agrega un boton mostrar alumnos ordenados, que muestre los alumnos ordenados por nombre. */
+function alumnosOrdenados(){
+    let listaOrdenada = listaAlumnos.slice();
+    listaOrdenada.sort();
+    mostrarListaAlumnos(listaOrdenada,"eje3Resultado");
+}
+
+/*4. Agrega una nueva opcion para agregar un nuevo alumno. Para ello:
+    - Agrega un campo para introducir el nombre del alumno. No puede estar vacio y debe tener maximo 30 caracteres.
+    - Agrega un boton agregar, que al pulsarlo agrege al nuevo alumno a la lista y muestre la lista de alumnos actualizada. 
+*/
+function agregarAlumno() {
+    let nuevoAlumno = document.getElementById("eje4NuevoAlumno").value;
+    let listaNueva = listaAlumnos.slice();
+    listaNueva.push(nuevoAlumno);
+    mostrarListaAlumnos(listaNueva,"eje4Resultado");
+}      
+
+/*5. Agrega una opcion para eliminar un alumno de una posicion elegida.
+    - Agrega un campo para introducir la posicion del alumno a eliminar. Debe ser un numero entre 1 y 500.
+    - Agrega un boton eliminar, que al pulsarlo, elimine el alumno de la posicion introducida y muestre la
+      lista de alumnos actualizada. Agrega una comprobacion para mostrar un mensaje de error si la posicion
+      introducida es mayor a la longitud total de la lista. 
+*/
+function eliminarAlumnoPosicion(){
+    let posicionAlumno = parseInt(document.getElementById("eje5PosicionAlumno").value);
+    let longitudLista = listaAlumnos.length;
+    let mensaje = "";
+
+    if (posicionAlumno > longitudLista) {
+        imprimir(mensaje, "eje5Resultado");
+    }
+    else {
+        let listaModificada = listaAlumnos.slice();
+        listaModificada[posicionAlumno-1].pop;
+        mostarListaAlumnos(listaModificada, "eje5Resultado");
+    }
+
+
+}
