@@ -86,7 +86,7 @@ function verPosicionElemento() {
 
 }
 
-let listaAlumnos = ["Sandra", "Jose", "Rebeca", "Sonia", "Camila", "Rocio", "Alicia", "Reyes", "Mónica", "Cristina"];
+let listaAlumnos = ["Maria Sandra", "Jose", "Rebeca", "Maria Sonia", "Camila", "Rocio", "Alicia", "Reyes", "Mónica", "Maria Cristina"];
 // EJERCICIOS
 /*1. Agrega un boton mostrar alumnos, que al pulsarlo muestre una lista con los nombres de 10 alumnos. */
 function mostrarListaAlumnos(listado, idResultado) {
@@ -118,9 +118,8 @@ function alumnosOrdenados(){
 */
 function agregarAlumno() {
     let nuevoAlumno = document.getElementById("eje4NuevoAlumno").value;
-    let listaNueva = listaAlumnos.slice();
-    listaNueva.push(nuevoAlumno);
-    mostrarListaAlumnos(listaNueva,"eje4Resultado");
+    listaAlumnos.push(nuevoAlumno);
+    mostrarListaAlumnos(listaAlumnos,"eje4Resultado");
 }      
 
 /*5. Agrega una opcion para eliminar un alumno de una posicion elegida.
@@ -130,18 +129,36 @@ function agregarAlumno() {
       introducida es mayor a la longitud total de la lista. 
 */
 function eliminarAlumnoPosicion(){
-    let posicionAlumno = parseInt(document.getElementById("eje5PosicionAlumno").value);
+    let posicionAlumno = parseInt(document.getElementById("eje5PosicionAlumno").value) - 1;
     let longitudLista = listaAlumnos.length;
     let mensaje = "";
 
-    if (posicionAlumno > longitudLista) {
+    if (posicionAlumno < 1 || posicionAlumno > longitudLista) {
+    let longitudLista = listaAlumnos.length;
+        mensaje = "La posición introducida no es correcta. La longitud de la lista de alumnos es de " + longitudLista + " elementos" 
         imprimir(mensaje, "eje5Resultado");
     }
     else {
-        let listaModificada = listaAlumnos.slice();
-        listaModificada[posicionAlumno-1].pop;
-        mostarListaAlumnos(listaModificada, "eje5Resultado");
+        listaAlumnos.splice(posicionAlumno, 1);
+        mostrarListaAlumnos(listaAlumnos, "eje5Resultado");
     }
+}
+/*6. Agrega una opcion para buscar un alumno. Para ello:
+    - Agrega un campo para introducir el nombre del alumno a buscar.
+    - Agrega un boton buscar, que al pulsarlo muentre un mensaje con todos los alumnos que contengan el
+      nombre introducido, sin distinguir entre mayusculas y minusculas.
+*/
+function buscarAlumno() {
+    let alumnoABuscar = document.getElementById("eje6AlumnoBuscar").value.toUpperCase();
 
+    let alumnosEncontrados = listaAlumnos.filter(elemento => elemento.toUpperCase().includes(alumnoABuscar));
+    let mensaje = "";
 
+    if (alumnosEncontrados.length > 0) {
+        mostrarListaAlumnos(alumnosEncontrados, "eje6Resultado");
+    }
+    else {
+        mensaje = "No hay ningún alumno con ese nombre";
+        imprimir(mensaje, "eje6Resultado");
+    }
 }

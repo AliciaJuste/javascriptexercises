@@ -133,6 +133,7 @@
             </button>
             <p id="eje2Resultado"></p>
         </div>
+        <br />
         <!-- EJERCICIO 3 ---------------->
         <div id="ejercicio3Arrays">
             <h4>Ejercicio 3: Mostrar alumnos ordenados</h4>
@@ -142,6 +143,7 @@
             </button>
             <p id="eje3Resultado"></p>
         </div>
+        <br />
         <!-- EJERCICIO 4 ---------------->
         <div id="ejercicio4Arrays">
             <h4>Ejercicio 4: Añadir un nuevo alumno</h4>
@@ -154,7 +156,7 @@
             <form id="eje4ArraysForm" class="was-validated">
                 <div class="mb-3">
                     <input type="text" id="eje4NuevoAlumno" required max="30" class="form-control"
-                        placeholder="Introduce el nombre del nuevo alumno">
+                        placeholder="Introduce el nombre del nuevo alumno" style="max-width: 340px;">
                     <p class="valid-feedback">El dato es correcto</p>
                     <p class="invalid-feedback">El dato es obligatorio y tiene que tener como máximo 30 caracteres</p>
                 </div>
@@ -162,7 +164,8 @@
             <button type="button" class="btn btn-success" onclick="agregarAlumno()">Añadir Alumno</button>
             <p id="eje4Resultado"></p>
         </div>
-        <!-- EJERCICIO 5 -----------pendiente-----> 
+        <br />
+        <!-- EJERCICIO 5 ----------------> 
         <div id="ejercicio5Arrays">
             <h4>Ejercicio 5:</h4>
             <h6>Agrega una opcion para eliminar un alumno de una posicion elegida.
@@ -177,13 +180,14 @@
                     <input type="number" id="eje5PosicionAlumno" required min="1" max="500" class="form-control" 
                            placeholder="Introduce la posición del alumno ">
                     <p class="valid-feedback">El dato es correcto</p>
-                    <p class="invalid-feedback">El dato es obligatorio y tiene que estar entre 0 y 500</p>
+                    <p class="invalid-feedback">El dato es obligatorio y tiene que estar entre 1 y 500</p>
                 </div>
             </form>
             <button type="button" class="btn btn-success" onclick="eliminarAlumnoPosicion()">Eliminar Alumno</button>
             <p id="eje5Resultado"></p>
         </div>
-        <!-- EJERCICIO 6 -----------pendiente----->
+        <br />
+        <!-- EJERCICIO 6 ---------------->
         <div id="ejercicio6Arrays">
             <h4>Ejercicio 6: Buscar un alumno</h4>
             <h6>Agrega una opcion para buscar un alumno. Para ello:
@@ -193,16 +197,15 @@
             </h6>
             <form id="eje6ArraysForm" class="was-validated">
                 <div class="mb-3">
-                    <input type="text" id="eje6" required max="30" class="form-control"
-                        placeholder="Lo que sea">
+                    <input type="text" id="eje6AlumnoBuscar" required max="30" class="form-control"
+                        placeholder="Introduce el nombre a buscar">
                     <p class="valid-feedback">El dato es correcto</p>
-                    <p class="invalid-feedback">El dato es obligatorio y tiene que tener como máximo 30 caracteres</p>
+                    <p class="invalid-feedback">El dato es obligatorio</p>
                 </div>
             </form>
-            <button type="button" class="btn btn-success" onclick="funcion6()">Añadir Alumno</button>
+            <button type="button" class="btn btn-success" onclick="buscarAlumno()">Buscar Alumno</button>
             <p id="eje6Resultado"></p>
         </div>
-
     </div>
 
     <script src="js/e6-arrays.js"></script>
