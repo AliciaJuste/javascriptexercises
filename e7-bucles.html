@@ -44,7 +44,7 @@
     <hr />
     <!-- EJERCICIOS --------------------------------------------------------------------------------------------------------->
     <div id="ejerciciosBucles" class="container mt-5">
-        <h2>EJERCICIOS ARRAYS</h2>
+        <h2>EJERCICIOS BUCLES</h2>
         <!-- EJERCICIO 1 ---------------->
         <div id="ejercicio1Bucles">
             <h4>Ejercicio 1: Sumar números</h4>
@@ -53,7 +53,16 @@
                 b) Agrega un boton que al pulsarlo muestre la suma de todos los numeros desde el 1 hasta el numero
                 indicado
             </h6>
-            <button type="button" class="btn btn-success" onclick="sumarNumeros(dato,'eje1Resultado')">
+            <form id="eje1BuclesForm" class="was-validated">
+                <div class="mb-3">
+                    <label for="eje1NumeroFinal">Introduce el número Final para realizar la suma</label>
+                    <input type="number" id="eje1NumeroFinal" required min="1" class="form-control"
+                        placeholder="Introduce el numero final" style="max-width: 300px;">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio y tiene que ser mayor de cero</p>
+                </div>
+            </form>
+            <button type="button" class="btn btn-success" onclick="sumarNumeros('eje1NumeroFinal','eje1Resultado')">
                 Sumar números
             </button>
             <p id="eje1Resultado"></p>
@@ -69,7 +78,24 @@
                 b. Agrega un boton que al pulsarlo muestre la palabra en mayusculas el numero de veces indicado por el
                 usuario.
             </h6>
-            <button type="button" class="btn btn-success" onclick="montrarPalabraNVeces(dato,'eje2Resultado')">
+            <form id="eje2BuclesForm" class="was-validated">
+                <div class="mb-3">
+                    <label for="eje2PalabraARepetir">Palabra a Repetir</label>
+                    <input type="text" id="eje2PalabraARepetir" required class="form-control"
+                        placeholder="Introduce la palabra a repetir" style="max-width: 300px;">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio</p>
+                </div>
+                <div class="mb-3">
+                    <label for="eje2Repeticiones">Indica las repeticiones para esta palabra</label>
+                    <input type="number" id="eje2Repeticiones" required class="form-control"
+                        placeholder="Introduce el número de repeticiones" min="1" style="max-width: 300px;">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio y debe ser mayor que cero</p>
+                </div>
+            </form>
+            <button type="button" class="btn btn-success"
+                onclick="mostrarPalabraNVeces('eje2PalabraARepetir', 'eje2Repeticiones', 'eje2Resultado')">
                 Mostrar Palabra
             </button>
             <p id="eje2Resultado"></p>
@@ -86,58 +112,121 @@
                 si la palabra introducida por el usuario empieza por VOCAL,
                 que muestre la palabra MARGARITA en cualquier otro caso.
             </h6>
-            <button type="button" class="btn btn-success" onclick="mostarrFLORNVeces(dato,'eje3Resultado')">
-                Mostrar Palabra
-            </button>
+            <form id="eje3BuclesForm" class="was-validated">
+                <div class="mb-3">
+                    <label for="eje3Palabra">Introduce una palabra</label>
+                    <input type="text" id="eje3Palabra" required class="form-control"
+                        placeholder="Introduce una palabra" pattern="[a-zA-Z\s]+" style="max-width: 300px;">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio</p>
+                </div>
+                <div class="mb-3">
+                    <label for="eje3Repeticiones">Indica las repeticiones para esta palabra</label>
+                    <input type="number" id="eje3Repeticiones" required class="form-control"
+                        placeholder="Introduce el número de repeticiones" min="1" style="max-width: 300px;">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio y debe ser mayor que cero</p>
+                </div>
+                <button type="button" class="btn btn-success"
+                    onclick="mostrarFloresNVeces('eje3Palabra', 'eje3Repeticiones', 'eje3Resultado')">
+                    Mostrar Palabra
+                </button>
+            </form>
+
             <p id="eje3Resultado"></p>
         </div>
         <br />
-        <!-- EJERCICIO 4 ---------------->
+        <!-- EJERCICIO 4 ------------------>
         <div id="ejercicio4Bucles">
             <h4>Ejercicio 4: Listado de números pares</h4>
             <h6>4. Muestra todos los numeros pares desde el 0 hasta el indicado por el usuario.
                 a. Agrega un campo para introducir un numero. Este campo no puede estar vacio.
-                b. Agrega un boton que al pulsarlo muestre todos los numeros pares, desde el 0 hasta el indicado. 
-                   Nota: Un numero es par si el resto de la division entre 2 es 0. 
-                   Para saber el resto de una division, puedes usar el operador %.          
+                b. Agrega un boton que al pulsarlo muestre todos los numeros pares, desde el 0 hasta el indicado.
+                Nota: Un numero es par si el resto de la division entre 2 es 0.
+                Para saber el resto de una division, puedes usar el operador %.
             </h6>
-            <button type="button" class="btn btn-success" onclick="mostarrListadoPares(dato,'eje4Resultado')">
-                Muestra listado
-            </button>
+            <form class="was-validated">
+                <div class="mb-3">
+                    <label for="eje4NumeroFinal">Introduce el número final del listado de pares</label>
+                    <input type="number" id="eje4NumeroFinal" required class="form-control"
+                        placeholder="Introduce un número" min="0" style="max-width: 200px;">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio y debe ser mayor o igual que cero</p>
+                </div>
+                <button type="button" class="btn btn-success" onclick="mostarListadoPares('eje4NumeroFinal','eje4Resultado')">
+                    Muestra listado
+                </button>
+            </form>
             <p id="eje4Resultado"></p>
         </div>
         <br />
         <div id="ejercicio5Bucles">
             <h4>Ejercicio 5: Listado de nombres en mayúsculas</h4>
             <h6>5. Muestra todos los nombres de una lista en mayusculas.
-                a. Agrega un nuevo campo para agregar nombres a una lista. Debe ser obligatorio y tener minimo 3 caracteres.
-                b. Agrega un boton que al pulsarlo agrege el nombre introducido en el formulario a una lista y la muestre por pantalla.
+                a. Agrega un nuevo campo para agregar nombres a una lista. Debe ser obligatorio y tener minimo 3
+                caracteres.
+                b. Agrega un boton que al pulsarlo agrege el nombre introducido en el formulario a una lista y la
+                muestre por pantalla.
                 c. Agrega un boton que al pulsarlo muestre la lista completa en mayusculas.
-                d. Agrega un nuevo boton que al pulsarlo muestre los nombres de la lista que empiecen por la letra A.          
+                d. Agrega un nuevo boton que alombres de la lista que empiecen por la letra A. pulsarlo muestre los n
             </h6>
-            <button type="button" class="btn btn-success" onclick="mostarListadoEnMayusculas(dato,'eje5Resultado')">
-                Muestra listado
-            </button>
+            <form class="was-validated">
+                <div class="mb-3">
+                    <label for="eje5Nombre">Introduce un nombre para la lista</label>
+                    <input type="text" id="eje5Nombre" required minlength="3" pattern="a-zA-Z" class="form-control" 
+                           placeholder="Introduce un nombre" style="max-width: 200px;">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio y debe ser de 3 caracteres como mínimo</p>
+                </div>
+                <button type="button" class="btn btn-info" onclick="agregarNombreListado('eje5Nombre','eje5Resultado')">
+                        Añadir Nombre
+                </button>
+                <button type="button" class="btn btn-success" onclick="mostrarListadoEnMayusculas('eje5Resultado')">
+                    Listado Mayusculas
+                </button>
+                <button type="button" class="btn btn-primary" onclick="mostrarListadoLetraA('eje5Resultado')">
+                    Listado Nombres que empiezan con "A"
+                </button>
+            </form>
             <p id="eje5Resultado"></p>
         </div>
         <br />
         <div id="ejercicio6Bucles">
-            <h4>Ejercicio 6: Sumar todos los números</h4>
-            <h6>6.Crea un programa para sumar todos los numeros de una lista.
-                a. Agrega un nuevo campo para agregar notas a una lista. Este campo debe ser numerico, y acepta numeros del 1 al 10 con decimales.
+            <h4>Ejercicio 6: Sumar todos las notas</h4>
+            <h6>6.Crea un programa para sumar todos las notas de una lista.
+                a. Agrega un nuevo campo para agregar notas a una lista. Este campo debe ser numerico, y acepta numeros
+                del 1 al 10 con decimales.
                 b. Agrega un boton agregar, que al pulsarlo agrege la nota introducida a la lista y la muestre.
-                c. Agrega un boton que al pulsarlo muestre la suma total de todos los numeros de la lista, o 0 si esta la lista vacia. 
+                c. Agrega un boton que al pulsarlo muestre la suma total de todos los numeros de la lista, o 0 si esta
+                la lista vacia.
                 d. Agrega un boton que muestre la nota media de la lista.
-                e. Agrega un boton para indicar si el usuario ha aprobado o no. El usuario esta aprobado si su nota media es igual o mayor a 5.          
+                e. Agrega un boton para indicar si el usuario ha aprobado o no. El usuario esta aprobado si su nota
+                media es igual o mayor a 5.
             </h6>
-            <button type="button" class="btn btn-success" onclick="sumarNumerosLista(dato,'eje6Resultado')">
-                Sumar
-            </button>
+            <form class="was-validated">
+                <div class="mb-3">
+                    <label for="eje6Nota">Introduce una nota</label>
+                    <input type="text" id="eje6Nota" required min="0" max="10" step="0.1" class="form-control" 
+                           placeholder="Introduce una nota" style="max-width: 200px;">
+                    <p class="valid-feedback">El dato es correcto</p>
+                    <p class="invalid-feedback">El dato es obligatorio y debe ser entre 0 y 10</p>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="agregarNotaLista('eje6Nota','eje6Resultado')">
+                    Añadir Nota
+                </button>
+                <button type="button" class="btn btn-info" onclick="sumaTotalLista('eje6Resultado')">
+                    Suma Total
+                </button>
+                <button type="button" class="btn btn-warning" onclick="notaMediaLista('eje6Resultado')">
+                    Nota Media
+                </button>
+                <button type="button" class="btn btn-success" onclick="hasAprobado('eje6Resultado')">
+                    Aprobado?
+                </button>
+            </form>
             <p id="eje6Resultado"></p>
         </div>
-        <br />
     </div>
-    <br />
 
     <script src="js/e7-bucles.js"></script>
 </body>
